@@ -1,0 +1,25 @@
+# Service account keys. This line exists before any key does, on purpose.
+*-service-account*.json
+*serviceaccount*.json
+gcp-key.json
+credentials.json
+.env
+.env.*
+!.env.example
+
+# dbt
+target/
+dbt_packages/
+logs/
+.user.yml
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store

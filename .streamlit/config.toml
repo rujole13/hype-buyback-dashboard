@@ -1,0 +1,35 @@
+[server]
+# THE setting that makes russelllee.net/hype work. Streamlit generates its own asset and
+# websocket URLs from this, so it must match the path the Cloudflare Worker routes on.
+# Local dev then serves at http://localhost:8501/hype, which is deliberate: local and
+# production behave identically and path bugs surface on your machine, not in production.
+baseUrlPath = "hype"
+
+address = "0.0.0.0"
+headless = true
+
+# Both off on purpose. The app sits behind Cloudflare, which terminates TLS and is the
+# only thing that talks to the origin. It is a public, read-only dashboard: no login, no
+# uploads, no writes, nothing to forge a request against. Leaving XSRF protection on is
+# the usual reason a reverse-proxied Streamlit connects its websocket and then drops it.
+# Revisit both if this app ever accepts input beyond slider state.
+enableCORS = false
+enableXsrfProtection = false
+
+# The scenario sliders send a message per drag. Keep the socket lively.
+enableWebsocketCompression = true
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = false
+
+[theme]
+# Matches russelllee.net so the proxied page does not look bolted on.
+base = "dark"
+backgroundColor = "#0b0d0f"
+secondaryBackgroundColor = "#12161a"
+textColor = "#e6ecf2"
+primaryColor = "#4ee0c1"

@@ -1,0 +1,61 @@
+name: Probe data sources
+
+# Phase 1 runs this to verify the sources. It then stays on as the earliest possible
+# version of the freshness alarm from Phase 4b: if a source goes dark, this goes red
+# before a hiring manager ever sees a stale dashboard.
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 06:00 UTC daily. Cheap, and a full day of drift is the most this can hide.
+    - cron: "0 6 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify probe logic against fixtures
+        run: python tests/test_probe_offline.py
+
+      - name: Probe every source
+        run: python scripts/probe_sources.py | tee probe-report.txt
+
+      - name: Publish the report to the run summary
+        if: always()
+        run: |
+          {
+            echo '## Source probe report'
+            echo '```'
+            cat probe-report.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit refreshed samples
+        if: success()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add samples/
+          if git diff --staged --quiet; then
+            echo "No sample changes."
+          else
+            git commit -m "chore: refresh source samples [skip ci]"
+            git push
+          fi
+
+      - name: Keep the report as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: probe-report
+          path: probe-report.txt
+          retention-days: 30

@@ -1,0 +1,17 @@
+# scripts/probe_sources.py deliberately uses the standard library only, so Phase 1
+# needs nothing installed. These are for Phase 2 onward.
+
+# The app Railway runs.
+streamlit>=1.38
+
+google-cloud-bigquery>=3.25
+pandas>=2.2
+requests>=2.32
+python-dotenv>=1.0
+
+# Phase 4
+dbt-bigquery>=1.8
+
+# Phase 4c
+scikit-learn>=1.5
+statsmodels>=0.14
