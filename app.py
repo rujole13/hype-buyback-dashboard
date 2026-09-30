@@ -134,7 +134,7 @@ st.subheader("Historical")
 st.info(
     "Phase 4 and 5. Cumulative fees, cumulative buybacks, and implied supply removed, "
     "read from a marts export committed by CI. Observed fact, no interactivity.",
-    icon="◷",
+    icon=":material/schedule:",
 )
 
 st.divider()
@@ -145,7 +145,7 @@ st.info(
     "Phase 5. Sliders for fee growth, buyback share of fees, slippage multiplier and time "
     "horizon, each defaulting to its live value with a marker showing where live sits. "
     "Sliders move assumptions only. Observed history stays locked.",
-    icon="◷",
+    icon=":material/schedule:",
 )
 
 st.divider()
