@@ -19,6 +19,7 @@ import streamlit as st
 
 HL_INFO = "https://api.hyperliquid.xyz/info"
 ASSISTANCE_FUND = "0xfefefefefefefefefefefefefefefefefefefefe"
+HYPE_TOKEN_ID = "0x0d01dc56dcaaca66ad901c959b4011ec"
 
 st.set_page_config(
     page_title="HYPE Buyback Model",
@@ -56,14 +57,11 @@ def live_snapshot() -> dict:
         out["errors"].append(f"perp context: {exc}")
 
     try:
-        spot_meta, _ = hl({"type": "spotMetaAndAssetCtxs"})
-        for tok in spot_meta.get("tokens", []):
-            if tok.get("name") == "HYPE":
-                out["circulating_supply"] = float(tok.get("circulatingSupply") or 0)
-                out["total_supply"] = float(tok.get("totalSupply") or 0)
-                break
+        details = hl({"type": "tokenDetails", "tokenId": HYPE_TOKEN_ID})
+        out["circulating_supply"] = float(details.get("circulatingSupply") or 0)
+        out["total_supply"] = float(details.get("totalSupply") or 0)
     except Exception as exc:
-        out["errors"].append(f"spot meta: {exc}")
+        out["errors"].append(f"token details: {exc}")
 
     try:
         state = hl({"type": "spotClearinghouseState", "user": ASSISTANCE_FUND})
@@ -115,15 +113,25 @@ c1.metric("HYPE mid", f"${snap.get('hype_perp_mid', 0):,.2f}" if snap.get("hype_
 c2.metric("Perp volume, 24h", fmt_usd(snap.get("perp_24h_volume")))
 c3.metric("Assistance Fund", fmt_num(snap.get("af_balance"), " HYPE"))
 
+adjusted_supply = None
 implied_mcap = None
-if snap.get("hype_perp_mid") and snap.get("circulating_supply"):
-    implied_mcap = snap["hype_perp_mid"] * snap["circulating_supply"]
-c4.metric("Market cap, circulating", fmt_usd(implied_mcap))
+if snap.get("circulating_supply") and snap.get("af_balance") is not None:
+    adjusted_supply = snap["circulating_supply"] - snap["af_balance"]
+    if snap.get("hype_perp_mid"):
+        implied_mcap = snap["hype_perp_mid"] * adjusted_supply
+c4.metric("Market cap, ex-Assistance Fund", fmt_usd(implied_mcap))
 
 if snap["errors"]:
     with st.expander(f"{len(snap['errors'])} live source(s) unavailable"):
         for err in snap["errors"]:
             st.write(f"- {err}")
+
+if adjusted_supply is not None:
+    st.caption(
+        f"Market cap excludes Assistance Fund HYPE, which is burned. Hyperliquid reports "
+        f"{snap['circulating_supply'] / 1e6:,.2f}M circulating; less "
+        f"{snap['af_balance'] / 1e6:,.2f}M in the fund leaves {adjusted_supply / 1e6:,.2f}M."
+    )
 
 st.caption(f"Live values cached 30s. Last fetched {snap['fetched_at']:%Y-%m-%d %H:%M:%S} UTC.")
 
