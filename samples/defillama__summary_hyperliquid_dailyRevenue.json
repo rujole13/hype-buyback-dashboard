@@ -1,0 +1,2978 @@
+{
+  "_probe": {
+    "captured_at": "2026-09-30T11:46:00.361488+00:00",
+    "url": "https://api.llama.fi/summary/fees/hyperliquid?dataType=dailyRevenue",
+    "method": "GET",
+    "request_body": null,
+    "http_status": 200,
+    "elapsed_ms": 852
+  },
+  "payload": {
+    "id": "parent#hyperliquid",
+    "name": "Hyperliquid",
+    "url": "https://app.hyperliquid.xyz",
+    "referralUrl": "https://app.hyperliquid.xyz/join/DEFILLAMAS",
+    "description": "Hyperliquid is a Layer 1 blockchain best known for perpetual futures and spot trading. Beyond its flagship decentralized exchange (DEX), the ecosystem supports borrowing, lending, RWAs, and a full-fledged EVM.",
+    "logo": "https://icons.llamao.fi/icons/protocols/hyperliquid",
+    "gecko_id": "hyperliquid",
+    "cmcId": "32196",
+    "chains": [
+      "Hyperliquid L1"
+    ],
+    "twitter": "HyperliquidX",
+    "github": [
+      "hyperliquid-dex"
+    ],
+    "symbol": "HYPE",
+    "address": "hyperliquid:0x0d01dc56dcaaca66ad901c959b4011ec",
+    "linkedProtocols": [
+      "Hyperliquid",
+      "Hyperliquid HLP",
+      "Hyperliquid Perps",
+      "Hyperliquid Spot Orderbook"
+    ],
+    "childProtocols": [
+      {
+        "name": "Hyperliquid HLP",
+        "defillamaId": "5448",
+        "displayName": "Hyperliquid HLP",
+        "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hyperliquid-hlp.ts",
+        "methodology": {
+          "UserFees": "Fees paid by users",
+          "Fees": "1% of perp and spot trading revenue (excluding builders and unit revenue) share for HLP.",
+          "Revenue": "No revenue.",
+          "ProtocolRevenue": "Fees going to treasury",
+          "HoldersRevenue": "Fees going to governance token holders",
+          "SupplySideRevenue": "All fees share of HLP are distributed to vaults suppliers."
+        },
+        "defaultChartView": null,
+        "breakdownMethodology": {
+          "Fees": {
+            "Perp Fees": "Share of 1% perp trading revenue.",
+            "Spot Fees": "Share of 1% spot trading revenue"
+          },
+          "SupplySideRevenue": {
+            "Perp Fees": "Share of 1% perp trading revenue.",
+            "Spot Fees": "Share of 1% spot trading revenue"
+          }
+        }
+      },
+      {
+        "name": "Hyperliquid Perps",
+        "defillamaId": "5507",
+        "displayName": "Hyperliquid Perps",
+        "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hyperliquid-perp",
+        "methodology": {
+          "UserFees": "Fees paid by users",
+          "Fees": "Include perps trading fees on crypto and HIP-3 deployed markets + builders fees, excluding all spot fees.",
+          "Revenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees.",
+          "ProtocolRevenue": "Protocol doesn't keep any fees.",
+          "HoldersRevenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees.",
+          "SupplySideRevenue": "1% of fees go to HLP Vault suppliers, before 30 Aug 2025 it was 3% + fees for builders.",
+          "Volume": "Track trading volume on all perps markets (including HIP-3 markets), excluding all spot markets volume."
+        },
+        "defaultChartView": null,
+        "breakdownMethodology": {
+          "Fees": {
+            "Perp Fees": "Perp trade fees collected as revenue, excluding spot fee.",
+            "Builder Code Fees": "Fees added on top by other platforms building on top of Hyperliquid.",
+            "Priority Fees": "Fees from priority orders paid."
+          },
+          "Revenue": {
+            "Perp Fees": "99% of perp trade fees, excluding spot fees and builders fees.",
+            "Priority Fees": "Fees from priority orders paid."
+          },
+          "SupplySideRevenue": {
+            "Builder Code Distribution": "All extra fees added on top by builders are fully passed down to these platforms.",
+            "HLP": "1% of the perp trade fees go to HLP vault (used to be 3% before 30 Aug 2025)",
+            "HIP-3 Deployer Distribution": "Fees are distributed back to HIP-3 markets deployers.",
+            "Maker Rebates": "Fees are rebated and distributed back to makers."
+          },
+          "HoldersRevenue": {
+            "Token Buy Back": "99% of perp trade fees (excluding spot fees and builders fees) for buy back HYPE tokens.",
+            "HYPE Burn From Priority Fees": "All prioroty fees will be used to buy and burn HYPE."
+          }
+        }
+      },
+      {
+        "name": "Hyperliquid Spot Orderbook",
+        "defillamaId": "5761",
+        "displayName": "Hyperliquid Spot Orderbook",
+        "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hyperliquid-spot",
+        "methodology": {
+          "UserFees": "Swap fees paid by users",
+          "Fees": "Include spot trading fees, unit protocol fees, and HYPE burned in successful HIP-1 token-deployment auctions, excluding perps fees.",
+          "Revenue": "97% of spot trading fees before 30 Aug 2025 and 99% thereafter go to Assistance Fund for buying HYPE tokens, excluding unit protocol fees; HYPE paid in successful HIP-1 token-deployment auctions is burned.",
+          "ProtocolRevenue": "Protocol doesn't keep any fees.",
+          "HoldersRevenue": "97% of spot trading fees before 30 Aug 2025 and 99% thereafter go to Assistance Fund for buying HYPE tokens, excluding unit protocol fees; HYPE paid in successful HIP-1 token-deployment auctions is permanently burned.",
+          "SupplySideRevenue": "1% of fees go to HLP Vault suppliers, before 30 Aug 2025 it was 3% + fees for unit protocol."
+        },
+        "defaultChartView": null,
+        "breakdownMethodology": {
+          "Fees": {
+            "Spot Fees": "Fees collected on all spot trades, excluding trades on markets with Unit assets (eg bridged BTC).",
+            "Spot fees on Unit markets": "Fees from spot trades on markets that include an asset deployed by Unit, in these spot markets all fees go to Unit.",
+            "Spot Deployment Auction Burns": "HYPE paid and permanently burned in successful HIP-1 token-deployment auctions."
+          },
+          "Revenue": {
+            "Spot Fees": "97% of spot trade fees before 30 Aug 2025 and 99% thereafter, excluding perp fees and unit protocol fees.",
+            "Spot Deployment Auction Burns": "HIP-1 token-deployment auction payments permanently burned rather than retained or distributed."
+          },
+          "SupplySideRevenue": {
+            "Unit Revenue": "All fees earned on Unit spot markets go to Unit",
+            "HLP": "1% of the spot fees go to HLP vault (used to be 3% before 30 Aug 2025)"
+          },
+          "HoldersRevenue": {
+            "Token Buy Back": "97% of spot trade fees before 30 Aug 2025 and 99% thereafter, excluding perp fees and unit protocol fees, for buying back HYPE tokens.",
+            "Spot Deployment Auction Burns": "HYPE permanently removed from supply through successful HIP-1 token-deployment auctions."
+          }
+        }
+      }
+    ],
+    "hasLabelBreakdown": true,
+    "defillamaId": "parent#hyperliquid",
+    "displayName": "Hyperliquid",
+    "module": null,
+    "category": null,
+    "methodologyURL": null,
+    "methodology": null,
+    "forkedFrom": null,
+    "audits": null,
+    "audit_links": null,
+    "governanceID": null,
+    "treasury": null,
+    "parentProtocol": null,
+    "previousNames": null,
+    "hallmarks": null,
+    "defaultChartView": null,
+    "doublecounted": null,
+    "breakdownMethodology": null,
+    "slug": "hyperliquid",
+    "protocolType": "protocol",
+    "total24h": 1824403,
+    "total48hto24h": 1922789,
+    "total7d": 12766027,
+    "total30d": 56571307,
+    "total1y": 687239789,
+    "annualized1y": 687239789,
+    "totalAllTime": 1286827527,
+    "totalDataChart": [
+      [
+        1734912000,
+        1424462
+      ],
+      [
+        1734998400,
+        1303665
+      ],
+      [
+        1735084800,
+        1014518
+      ],
+      [
+        1735171200,
+        1273897
+      ],
+      [
+        1735257600,
+        1258520
+      ],
+      [
+        1735344000,
+        949315
+      ],
+      [
+        1735430400,
+        471167
+      ],
+      [
+        1735516800,
+        1486794
+      ],
+      [
+        1735603200,
+        1327977
+      ],
+      [
+        1735689600,
+        498037
+      ],
+      [
+        1735776000,
+        1270220
+      ],
+      [
+        1735862400,
+        1369500
+      ],
+      [
+        1735948800,
+        1042972
+      ],
+      [
+        1736035200,
+        985187
+      ],
+      [
+        1736121600,
+        1036760
+      ],
+      [
+        1736208000,
+        2114140
+      ],
+      [
+        1736294400,
+        1758819
+      ],
+      [
+        1736380800,
+        1921239
+      ],
+      [
+        1736467200,
+        1475032
+      ],
+      [
+        1736553600,
+        458402
+      ],
+      [
+        1736812800,
+        1230157
+      ],
+      [
+        1736899200,
+        1231497
+      ],
+      [
+        1736985600,
+        1644992
+      ],
+      [
+        1737072000,
+        1647338
+      ],
+      [
+        1737158400,
+        2754660
+      ],
+      [
+        1737244800,
+        4182537
+      ],
+      [
+        1737331200,
+        3956440
+      ],
+      [
+        1737417600,
+        2003967
+      ],
+      [
+        1737504000,
+        1392360
+      ],
+      [
+        1737590400,
+        2736794
+      ],
+      [
+        1737676800,
+        1268918
+      ],
+      [
+        1737763200,
+        1043099
+      ],
+      [
+        1737849600,
+        1050474
+      ],
+      [
+        1737936000,
+        2618211
+      ],
+      [
+        1738022400,
+        1482994
+      ],
+      [
+        1738108800,
+        1822611
+      ],
+      [
+        1738195200,
+        1405939
+      ],
+      [
+        1738281600,
+        1723246
+      ],
+      [
+        1738368000,
+        1390845
+      ],
+      [
+        1738454400,
+        2002237
+      ],
+      [
+        1738540800,
+        4133623
+      ],
+      [
+        1738627200,
+        2436561
+      ],
+      [
+        1738713600,
+        1400074
+      ],
+      [
+        1738800000,
+        1300731
+      ],
+      [
+        1738886400,
+        1510714
+      ],
+      [
+        1738972800,
+        770646
+      ],
+      [
+        1739059200,
+        964647
+      ],
+      [
+        1739145600,
+        1101082
+      ],
+      [
+        1739232000,
+        1507923
+      ],
+      [
+        1739318400,
+        1755146
+      ],
+      [
+        1739404800,
+        1364454
+      ],
+      [
+        1739491200,
+        995279
+      ],
+      [
+        1739577600,
+        719690
+      ],
+      [
+        1739664000,
+        590017
+      ],
+      [
+        1739750400,
+        1284898
+      ],
+      [
+        1739836800,
+        1600692
+      ],
+      [
+        1739923200,
+        979405
+      ],
+      [
+        1740009600,
+        1159166
+      ],
+      [
+        1740096000,
+        2316528
+      ],
+      [
+        1740182400,
+        871664
+      ],
+      [
+        1740268800,
+        730962
+      ],
+      [
+        1740355200,
+        1485788
+      ],
+      [
+        1740441600,
+        3739612
+      ],
+      [
+        1740528000,
+        2149527
+      ],
+      [
+        1740614400,
+        1512278
+      ],
+      [
+        1740700800,
+        2432393
+      ],
+      [
+        1740787200,
+        986055
+      ],
+      [
+        1740873600,
+        2543535
+      ],
+      [
+        1740960000,
+        2309308
+      ],
+      [
+        1741046400,
+        2752695
+      ],
+      [
+        1741132800,
+        1426600
+      ],
+      [
+        1741219200,
+        1542778
+      ],
+      [
+        1741305600,
+        2285221
+      ],
+      [
+        1741392000,
+        625934
+      ],
+      [
+        1741478400,
+        1192088
+      ],
+      [
+        1741564800,
+        2131600
+      ],
+      [
+        1741651200,
+        1830963
+      ],
+      [
+        1741737600,
+        1519532
+      ],
+      [
+        1741824000,
+        1101752
+      ],
+      [
+        1741910400,
+        932668
+      ],
+      [
+        1741996800,
+        603903
+      ],
+      [
+        1742083200,
+        818086
+      ],
+      [
+        1742169600,
+        785447
+      ],
+      [
+        1742256000,
+        1091874
+      ],
+      [
+        1742342400,
+        1374072
+      ],
+      [
+        1742428800,
+        1127141
+      ],
+      [
+        1742515200,
+        832781
+      ],
+      [
+        1742601600,
+        513437
+      ],
+      [
+        1742688000,
+        542472
+      ],
+      [
+        1742774400,
+        1214013
+      ],
+      [
+        1742860800,
+        953188
+      ],
+      [
+        1742947200,
+        1092328
+      ],
+      [
+        1743033600,
+        804346
+      ],
+      [
+        1743120000,
+        1070808
+      ],
+      [
+        1743206400,
+        765441
+      ],
+      [
+        1743292800,
+        658882
+      ],
+      [
+        1743379200,
+        1264433
+      ],
+      [
+        1743465600,
+        1146261
+      ],
+      [
+        1743552000,
+        1838424
+      ],
+      [
+        1743638400,
+        1342024
+      ],
+      "__truncated__ 442 items omitted",
+      [
+        1782086400,
+        1865990
+      ],
+      [
+        1782172800,
+        1820571
+      ],
+      [
+        1782259200,
+        2260187
+      ],
+      [
+        1782345600,
+        2020952
+      ],
+      [
+        1782432000,
+        2007928
+      ],
+      [
+        1782518400,
+        704471
+      ],
+      [
+        1782604800,
+        799088
+      ],
+      [
+        1782691200,
+        1703644
+      ],
+      [
+        1782777600,
+        1499363
+      ],
+      [
+        1782864000,
+        2062067
+      ],
+      [
+        1782950400,
+        1890705
+      ],
+      [
+        1783036800,
+        1260451
+      ],
+      [
+        1783123200,
+        914967
+      ],
+      [
+        1783209600,
+        788113
+      ],
+      [
+        1783296000,
+        1918929
+      ],
+      [
+        1783382400,
+        1326128
+      ],
+      [
+        1783468800,
+        1477879
+      ],
+      [
+        1783555200,
+        1237986
+      ],
+      [
+        1783641600,
+        1241825
+      ],
+      [
+        1783728000,
+        639667
+      ],
+      [
+        1783814400,
+        622690
+      ],
+      [
+        1783900800,
+        1672478
+      ],
+      [
+        1783987200,
+        1634522
+      ],
+      [
+        1784073600,
+        1337036
+      ],
+      [
+        1784160000,
+        1382751
+      ],
+      [
+        1784246400,
+        1445516
+      ],
+      [
+        1784332800,
+        542197
+      ],
+      [
+        1784419200,
+        607415
+      ],
+      [
+        1784505600,
+        1603331
+      ],
+      [
+        1784592000,
+        1357373
+      ],
+      [
+        1784678400,
+        1029393
+      ],
+      [
+        1784764800,
+        1064168
+      ],
+      [
+        1784851200,
+        1201793
+      ],
+      [
+        1784937600,
+        444686
+      ],
+      [
+        1785024000,
+        667938
+      ],
+      [
+        1785110400,
+        1508785
+      ],
+      [
+        1785196800,
+        1371206
+      ],
+      [
+        1785283200,
+        1708726
+      ],
+      [
+        1785369600,
+        1006911
+      ],
+      [
+        1785456000,
+        1451214
+      ],
+      [
+        1785542400,
+        513764
+      ],
+      [
+        1785628800,
+        777244
+      ],
+      [
+        1785715200,
+        1160738
+      ],
+      [
+        1785801600,
+        1120832
+      ],
+      [
+        1785888000,
+        1145610
+      ],
+      [
+        1785974400,
+        963094
+      ],
+      [
+        1786060800,
+        1132293
+      ],
+      [
+        1786147200,
+        378920
+      ],
+      [
+        1786233600,
+        534851
+      ],
+      [
+        1786320000,
+        1070956
+      ],
+      [
+        1786406400,
+        818025
+      ],
+      [
+        1786492800,
+        1139657
+      ],
+      [
+        1786579200,
+        1156378
+      ],
+      [
+        1786665600,
+        838034
+      ],
+      [
+        1786752000,
+        277967
+      ],
+      [
+        1786838400,
+        422613
+      ],
+      [
+        1786924800,
+        1178504
+      ],
+      [
+        1787011200,
+        1025353
+      ],
+      [
+        1787097600,
+        4065210
+      ],
+      [
+        1787184000,
+        3345022
+      ],
+      [
+        1787270400,
+        4941674
+      ],
+      [
+        1787356800,
+        2373305
+      ],
+      [
+        1787443200,
+        2400615
+      ],
+      [
+        1787529600,
+        3360221
+      ],
+      [
+        1787616000,
+        3422581
+      ],
+      [
+        1787702400,
+        2304022
+      ],
+      [
+        1787788800,
+        2774693
+      ],
+      [
+        1787875200,
+        2570016
+      ],
+      [
+        1787961600,
+        758325
+      ],
+      [
+        1788048000,
+        1581149
+      ],
+      [
+        1788134400,
+        1930781
+      ],
+      [
+        1788220800,
+        1980275
+      ],
+      [
+        1788307200,
+        1730073
+      ],
+      [
+        1788393600,
+        2698222
+      ],
+      [
+        1788480000,
+        2275230
+      ],
+      [
+        1788566400,
+        866464
+      ],
+      [
+        1788652800,
+        1307800
+      ],
+      [
+        1788739200,
+        1419868
+      ],
+      [
+        1788825600,
+        1800584
+      ],
+      [
+        1788912000,
+        1819666
+      ],
+      [
+        1788998400,
+        2077845
+      ],
+      [
+        1789084800,
+        1129107
+      ],
+      [
+        1789171200,
+        584129
+      ],
+      [
+        1789257600,
+        1066867
+      ],
+      [
+        1789344000,
+        2193167
+      ],
+      [
+        1789430400,
+        2404329
+      ],
+      [
+        1789516800,
+        2210511
+      ],
+      [
+        1789603200,
+        1941723
+      ],
+      [
+        1789689600,
+        3071417
+      ],
+      [
+        1789776000,
+        1506892
+      ],
+      [
+        1789862400,
+        1752014
+      ],
+      [
+        1789948800,
+        3663607
+      ],
+      [
+        1790035200,
+        2374709
+      ],
+      [
+        1790121600,
+        2117271
+      ],
+      [
+        1790208000,
+        2802028
+      ],
+      [
+        1790294400,
+        1861311
+      ],
+      [
+        1790380800,
+        900334
+      ],
+      [
+        1790467200,
+        1337891
+      ],
+      [
+        1790553600,
+        1922789
+      ],
+      [
+        1790640000,
+        1824403
+      ]
+    ],
+    "totalDataChartBreakdown": [
+      [
+        1734912000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid Perps": 1331096,
+            "Hyperliquid Spot Orderbook": 93366
+          }
+        }
+      ],
+      [
+        1734998400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1257770,
+            "Hyperliquid Spot Orderbook": 45895
+          }
+        }
+      ],
+      [
+        1735084800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 972264,
+            "Hyperliquid Spot Orderbook": 42254
+          }
+        }
+      ],
+      [
+        1735171200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1230971,
+            "Hyperliquid Spot Orderbook": 42926
+          }
+        }
+      ],
+      [
+        1735257600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1230853,
+            "Hyperliquid Spot Orderbook": 27667
+          }
+        }
+      ],
+      [
+        1735344000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 921738,
+            "Hyperliquid Spot Orderbook": 27577
+          }
+        }
+      ],
+      [
+        1735430400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 440616,
+            "Hyperliquid Spot Orderbook": 30551
+          }
+        }
+      ],
+      [
+        1735516800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1439154,
+            "Hyperliquid Spot Orderbook": 47640
+          }
+        }
+      ],
+      [
+        1735603200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1286304,
+            "Hyperliquid Spot Orderbook": 41673
+          }
+        }
+      ],
+      [
+        1735689600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 468800,
+            "Hyperliquid Spot Orderbook": 29237
+          }
+        }
+      ],
+      [
+        1735776000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1229804,
+            "Hyperliquid Spot Orderbook": 40416
+          }
+        }
+      ],
+      [
+        1735862400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1333605,
+            "Hyperliquid Spot Orderbook": 35895
+          }
+        }
+      ],
+      [
+        1735948800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1018356,
+            "Hyperliquid Spot Orderbook": 24616
+          }
+        }
+      ],
+      [
+        1736035200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 966503,
+            "Hyperliquid Spot Orderbook": 18684
+          }
+        }
+      ],
+      [
+        1736121600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1014010,
+            "Hyperliquid Spot Orderbook": 22750
+          }
+        }
+      ],
+      [
+        1736208000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2084832,
+            "Hyperliquid Spot Orderbook": 29308
+          }
+        }
+      ],
+      [
+        1736294400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1714904,
+            "Hyperliquid Spot Orderbook": 43915
+          }
+        }
+      ],
+      [
+        1736380800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1875270,
+            "Hyperliquid Spot Orderbook": 45969
+          }
+        }
+      ],
+      [
+        1736467200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1448094,
+            "Hyperliquid Spot Orderbook": 26938
+          }
+        }
+      ],
+      [
+        1736553600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 443890,
+            "Hyperliquid Spot Orderbook": 14512
+          }
+        }
+      ],
+      [
+        1736812800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1206563,
+            "Hyperliquid Spot Orderbook": 23594
+          }
+        }
+      ],
+      [
+        1736899200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1208299,
+            "Hyperliquid Spot Orderbook": 23198
+          }
+        }
+      ],
+      [
+        1736985600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1626948,
+            "Hyperliquid Spot Orderbook": 18044
+          }
+        }
+      ],
+      [
+        1737072000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1627468,
+            "Hyperliquid Spot Orderbook": 19870
+          }
+        }
+      ],
+      [
+        1737158400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2703819,
+            "Hyperliquid Spot Orderbook": 50841
+          }
+        }
+      ],
+      [
+        1737244800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 4122862,
+            "Hyperliquid Spot Orderbook": 59675
+          }
+        }
+      ],
+      [
+        1737331200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 3923189,
+            "Hyperliquid Spot Orderbook": 33251
+          }
+        }
+      ],
+      [
+        1737417600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1970920,
+            "Hyperliquid Spot Orderbook": 33047
+          }
+        }
+      ],
+      [
+        1737504000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1362855,
+            "Hyperliquid Spot Orderbook": 29505
+          }
+        }
+      ],
+      [
+        1737590400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2699780,
+            "Hyperliquid Spot Orderbook": 37014
+          }
+        }
+      ],
+      [
+        1737676800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1245639,
+            "Hyperliquid Spot Orderbook": 23279
+          }
+        }
+      ],
+      [
+        1737763200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1029211,
+            "Hyperliquid Spot Orderbook": 13888
+          }
+        }
+      ],
+      [
+        1737849600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1034115,
+            "Hyperliquid Spot Orderbook": 16359
+          }
+        }
+      ],
+      [
+        1737936000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2581765,
+            "Hyperliquid Spot Orderbook": 36446
+          }
+        }
+      ],
+      [
+        1738022400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1457018,
+            "Hyperliquid Spot Orderbook": 25976
+          }
+        }
+      ],
+      [
+        1738108800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1803195,
+            "Hyperliquid Spot Orderbook": 19416
+          }
+        }
+      ],
+      [
+        1738195200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1368586,
+            "Hyperliquid Spot Orderbook": 37353
+          }
+        }
+      ],
+      [
+        1738281600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1693391,
+            "Hyperliquid Spot Orderbook": 29855
+          }
+        }
+      ],
+      [
+        1738368000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1351636,
+            "Hyperliquid Spot Orderbook": 39209
+          }
+        }
+      ],
+      [
+        1738454400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1959076,
+            "Hyperliquid Spot Orderbook": 43161
+          }
+        }
+      ],
+      [
+        1738540800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 4072048,
+            "Hyperliquid Spot Orderbook": 61575
+          }
+        }
+      ],
+      [
+        1738627200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2400078,
+            "Hyperliquid Spot Orderbook": 36483
+          }
+        }
+      ],
+      [
+        1738713600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1372705,
+            "Hyperliquid Spot Orderbook": 27369
+          }
+        }
+      ],
+      [
+        1738800000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1276876,
+            "Hyperliquid Spot Orderbook": 23855
+          }
+        }
+      ],
+      [
+        1738886400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1485152,
+            "Hyperliquid Spot Orderbook": 25562
+          }
+        }
+      ],
+      [
+        1738972800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 758944,
+            "Hyperliquid Spot Orderbook": 11702
+          }
+        }
+      ],
+      [
+        1739059200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 954285,
+            "Hyperliquid Spot Orderbook": 10362
+          }
+        }
+      ],
+      [
+        1739145600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1089443,
+            "Hyperliquid Spot Orderbook": 11639
+          }
+        }
+      ],
+      [
+        1739232000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1492737,
+            "Hyperliquid Spot Orderbook": 15186
+          }
+        }
+      ],
+      [
+        1739318400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1737484,
+            "Hyperliquid Spot Orderbook": 17662
+          }
+        }
+      ],
+      [
+        1739404800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid Perps": 1346426,
+            "Hyperliquid Spot Orderbook": 18028
+          }
+        }
+      ],
+      [
+        1739491200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid Perps": 970299,
+            "Hyperliquid Spot Orderbook": 24980
+          }
+        }
+      ],
+      [
+        1739577600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid Perps": 702597,
+            "Hyperliquid Spot Orderbook": 17093
+          }
+        }
+      ],
+      [
+        1739664000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 581427,
+            "Hyperliquid Spot Orderbook": 8590
+          }
+        }
+      ],
+      [
+        1739750400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1266513,
+            "Hyperliquid Spot Orderbook": 18385
+          }
+        }
+      ],
+      [
+        1739836800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1546561,
+            "Hyperliquid Spot Orderbook": 54131
+          }
+        }
+      ],
+      [
+        1739923200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 958010,
+            "Hyperliquid Spot Orderbook": 21395
+          }
+        }
+      ],
+      [
+        1740009600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1139656,
+            "Hyperliquid Spot Orderbook": 19510
+          }
+        }
+      ],
+      [
+        1740096000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid Perps": 2289528,
+            "Hyperliquid Spot Orderbook": 27000
+          }
+        }
+      ],
+      [
+        1740182400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid Perps": 859613,
+            "Hyperliquid Spot Orderbook": 12051
+          }
+        }
+      ],
+      [
+        1740268800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 717494,
+            "Hyperliquid Spot Orderbook": 13468
+          }
+        }
+      ],
+      [
+        1740355200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid Perps": 1450384,
+            "Hyperliquid Spot Orderbook": 35404
+          }
+        }
+      ],
+      [
+        1740441600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid Perps": 3665484,
+            "Hyperliquid Spot Orderbook": 74128
+          }
+        }
+      ],
+      [
+        1740528000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2113710,
+            "Hyperliquid Spot Orderbook": 35817
+          }
+        }
+      ],
+      [
+        1740614400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1491430,
+            "Hyperliquid Spot Orderbook": 20848
+          }
+        }
+      ],
+      [
+        1740700800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2400337,
+            "Hyperliquid Spot Orderbook": 32056
+          }
+        }
+      ],
+      [
+        1740787200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 974089,
+            "Hyperliquid Spot Orderbook": 11966
+          }
+        }
+      ],
+      [
+        1740873600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2513243,
+            "Hyperliquid Spot Orderbook": 30292
+          }
+        }
+      ],
+      [
+        1740960000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid Perps": 2278269,
+            "Hyperliquid Spot Orderbook": 31039
+          }
+        }
+      ],
+      [
+        1741046400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid Perps": 2706216,
+            "Hyperliquid Spot Orderbook": 46479
+          }
+        }
+      ],
+      [
+        1741132800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1407154,
+            "Hyperliquid Spot Orderbook": 19446
+          }
+        }
+      ],
+      [
+        1741219200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1519346,
+            "Hyperliquid Spot Orderbook": 23432
+          }
+        }
+      ],
+      [
+        1741305600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2262255,
+            "Hyperliquid Spot Orderbook": 22966
+          }
+        }
+      ],
+      [
+        1741392000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 615369,
+            "Hyperliquid Spot Orderbook": 10565
+          }
+        }
+      ],
+      [
+        1741478400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1174636,
+            "Hyperliquid Spot Orderbook": 17452
+          }
+        }
+      ],
+      [
+        1741564800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2107411,
+            "Hyperliquid Spot Orderbook": 24189
+          }
+        }
+      ],
+      [
+        1741651200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1807112,
+            "Hyperliquid Spot Orderbook": 23851
+          }
+        }
+      ],
+      [
+        1741737600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1493812,
+            "Hyperliquid Spot Orderbook": 25720
+          }
+        }
+      ],
+      [
+        1741824000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1080722,
+            "Hyperliquid Spot Orderbook": 21030
+          }
+        }
+      ],
+      [
+        1741910400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 916442,
+            "Hyperliquid Spot Orderbook": 16226
+          }
+        }
+      ],
+      [
+        1741996800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 596245,
+            "Hyperliquid Spot Orderbook": 7658
+          }
+        }
+      ],
+      [
+        1742083200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 807747,
+            "Hyperliquid Spot Orderbook": 10339
+          }
+        }
+      ],
+      [
+        1742169600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 777486,
+            "Hyperliquid Spot Orderbook": 7961
+          }
+        }
+      ],
+      [
+        1742256000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1083950,
+            "Hyperliquid Spot Orderbook": 7924
+          }
+        }
+      ],
+      [
+        1742342400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1356148,
+            "Hyperliquid Spot Orderbook": 17924
+          }
+        }
+      ],
+      [
+        1742428800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1113529,
+            "Hyperliquid Spot Orderbook": 13612
+          }
+        }
+      ],
+      [
+        1742515200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 820786,
+            "Hyperliquid Spot Orderbook": 11995
+          }
+        }
+      ],
+      [
+        1742601600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 505253,
+            "Hyperliquid Spot Orderbook": 8184
+          }
+        }
+      ],
+      [
+        1742688000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 536111,
+            "Hyperliquid Spot Orderbook": 6361
+          }
+        }
+      ],
+      [
+        1742774400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1195404,
+            "Hyperliquid Spot Orderbook": 18609
+          }
+        }
+      ],
+      [
+        1742860800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 942009,
+            "Hyperliquid Spot Orderbook": 11179
+          }
+        }
+      ],
+      [
+        1742947200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1032128,
+            "Hyperliquid Spot Orderbook": 60200
+          }
+        }
+      ],
+      [
+        1743033600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 792484,
+            "Hyperliquid Spot Orderbook": 11862
+          }
+        }
+      ],
+      [
+        1743120000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1053173,
+            "Hyperliquid Spot Orderbook": 17635
+          }
+        }
+      ],
+      [
+        1743206400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 753215,
+            "Hyperliquid Spot Orderbook": 12226
+          }
+        }
+      ],
+      [
+        1743292800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 651679,
+            "Hyperliquid Spot Orderbook": 7203
+          }
+        }
+      ],
+      [
+        1743379200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1252164,
+            "Hyperliquid Spot Orderbook": 12269
+          }
+        }
+      ],
+      [
+        1743465600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1137331,
+            "Hyperliquid Spot Orderbook": 8930
+          }
+        }
+      ],
+      [
+        1743552000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1816774,
+            "Hyperliquid Spot Orderbook": 21650
+          }
+        }
+      ],
+      [
+        1743638400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1324083,
+            "Hyperliquid Spot Orderbook": 17941
+          }
+        }
+      ],
+      "__truncated__ 442 items omitted",
+      [
+        1782086400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1824878,
+            "Hyperliquid Spot Orderbook": 41112
+          }
+        }
+      ],
+      [
+        1782172800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1761060,
+            "Hyperliquid Spot Orderbook": 59511
+          }
+        }
+      ],
+      [
+        1782259200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2196674,
+            "Hyperliquid Spot Orderbook": 63513
+          }
+        }
+      ],
+      [
+        1782345600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1957914,
+            "Hyperliquid Spot Orderbook": 63038
+          }
+        }
+      ],
+      [
+        1782432000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1946345,
+            "Hyperliquid Spot Orderbook": 61583
+          }
+        }
+      ],
+      [
+        1782518400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 677622,
+            "Hyperliquid Spot Orderbook": 26849
+          }
+        }
+      ],
+      [
+        1782604800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 772879,
+            "Hyperliquid Spot Orderbook": 26209
+          }
+        }
+      ],
+      [
+        1782691200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1645500,
+            "Hyperliquid Spot Orderbook": 58144
+          }
+        }
+      ],
+      [
+        1782777600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1457698,
+            "Hyperliquid Spot Orderbook": 41665
+          }
+        }
+      ],
+      [
+        1782864000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2007058,
+            "Hyperliquid Spot Orderbook": 55009
+          }
+        }
+      ],
+      [
+        1782950400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1841807,
+            "Hyperliquid Spot Orderbook": 48898
+          }
+        }
+      ],
+      [
+        1783036800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1211097,
+            "Hyperliquid Spot Orderbook": 49354
+          }
+        }
+      ],
+      [
+        1783123200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 890418,
+            "Hyperliquid Spot Orderbook": 24549
+          }
+        }
+      ],
+      [
+        1783209600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 760098,
+            "Hyperliquid Spot Orderbook": 28015
+          }
+        }
+      ],
+      [
+        1783296000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1872227,
+            "Hyperliquid Spot Orderbook": 46702
+          }
+        }
+      ],
+      [
+        1783382400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1286519,
+            "Hyperliquid Spot Orderbook": 39609
+          }
+        }
+      ],
+      [
+        1783468800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1430759,
+            "Hyperliquid Spot Orderbook": 47120
+          }
+        }
+      ],
+      [
+        1783555200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1206707,
+            "Hyperliquid Spot Orderbook": 31279
+          }
+        }
+      ],
+      [
+        1783641600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1209155,
+            "Hyperliquid Spot Orderbook": 32670
+          }
+        }
+      ],
+      [
+        1783728000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 608938,
+            "Hyperliquid Spot Orderbook": 30729
+          }
+        }
+      ],
+      [
+        1783814400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 601608,
+            "Hyperliquid Spot Orderbook": 21082
+          }
+        }
+      ],
+      [
+        1783900800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1624482,
+            "Hyperliquid Spot Orderbook": 47996
+          }
+        }
+      ],
+      [
+        1783987200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1600884,
+            "Hyperliquid Spot Orderbook": 33638
+          }
+        }
+      ],
+      [
+        1784073600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1291678,
+            "Hyperliquid Spot Orderbook": 45358
+          }
+        }
+      ],
+      [
+        1784160000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1330470,
+            "Hyperliquid Spot Orderbook": 52281
+          }
+        }
+      ],
+      [
+        1784246400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1383933,
+            "Hyperliquid Spot Orderbook": 61583
+          }
+        }
+      ],
+      [
+        1784332800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 522773,
+            "Hyperliquid Spot Orderbook": 19424
+          }
+        }
+      ],
+      [
+        1784419200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 594607,
+            "Hyperliquid Spot Orderbook": 12808
+          }
+        }
+      ],
+      [
+        1784505600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1578507,
+            "Hyperliquid Spot Orderbook": 24824
+          }
+        }
+      ],
+      [
+        1784592000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1320396,
+            "Hyperliquid Spot Orderbook": 36977
+          }
+        }
+      ],
+      [
+        1784678400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 999007,
+            "Hyperliquid Spot Orderbook": 30386
+          }
+        }
+      ],
+      [
+        1784764800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1034178,
+            "Hyperliquid Spot Orderbook": 29990
+          }
+        }
+      ],
+      [
+        1784851200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1174615,
+            "Hyperliquid Spot Orderbook": 27178
+          }
+        }
+      ],
+      [
+        1784937600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 432073,
+            "Hyperliquid Spot Orderbook": 12613
+          }
+        }
+      ],
+      [
+        1785024000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 651931,
+            "Hyperliquid Spot Orderbook": 16007
+          }
+        }
+      ],
+      [
+        1785110400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1469430,
+            "Hyperliquid Spot Orderbook": 39355
+          }
+        }
+      ],
+      [
+        1785196800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1328394,
+            "Hyperliquid Spot Orderbook": 42812
+          }
+        }
+      ],
+      [
+        1785283200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1672178,
+            "Hyperliquid Spot Orderbook": 36548
+          }
+        }
+      ],
+      [
+        1785369600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 976029,
+            "Hyperliquid Spot Orderbook": 30882
+          }
+        }
+      ],
+      [
+        1785456000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1407239,
+            "Hyperliquid Spot Orderbook": 43975
+          }
+        }
+      ],
+      [
+        1785542400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 493722,
+            "Hyperliquid Spot Orderbook": 20042
+          }
+        }
+      ],
+      [
+        1785628800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 752594,
+            "Hyperliquid Spot Orderbook": 24650
+          }
+        }
+      ],
+      [
+        1785715200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1136923,
+            "Hyperliquid Spot Orderbook": 23815
+          }
+        }
+      ],
+      [
+        1785801600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1100383,
+            "Hyperliquid Spot Orderbook": 20449
+          }
+        }
+      ],
+      [
+        1785888000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1111656,
+            "Hyperliquid Spot Orderbook": 33954
+          }
+        }
+      ],
+      [
+        1785974400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 938574,
+            "Hyperliquid Spot Orderbook": 24520
+          }
+        }
+      ],
+      [
+        1786060800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1099829,
+            "Hyperliquid Spot Orderbook": 32464
+          }
+        }
+      ],
+      [
+        1786147200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 367805,
+            "Hyperliquid Spot Orderbook": 11115
+          }
+        }
+      ],
+      [
+        1786233600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 518410,
+            "Hyperliquid Spot Orderbook": 16441
+          }
+        }
+      ],
+      [
+        1786320000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1046329,
+            "Hyperliquid Spot Orderbook": 24627
+          }
+        }
+      ],
+      [
+        1786406400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 794787,
+            "Hyperliquid Spot Orderbook": 23238
+          }
+        }
+      ],
+      [
+        1786492800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1111473,
+            "Hyperliquid Spot Orderbook": 28184
+          }
+        }
+      ],
+      [
+        1786579200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1129083,
+            "Hyperliquid Spot Orderbook": 27295
+          }
+        }
+      ],
+      [
+        1786665600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 813844,
+            "Hyperliquid Spot Orderbook": 24190
+          }
+        }
+      ],
+      [
+        1786752000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 266912,
+            "Hyperliquid Spot Orderbook": 11055
+          }
+        }
+      ],
+      [
+        1786838400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 411776,
+            "Hyperliquid Spot Orderbook": 10837
+          }
+        }
+      ],
+      [
+        1786924800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1148449,
+            "Hyperliquid Spot Orderbook": 30055
+          }
+        }
+      ],
+      [
+        1787011200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 995558,
+            "Hyperliquid Spot Orderbook": 29795
+          }
+        }
+      ],
+      [
+        1787097600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 3929379,
+            "Hyperliquid Spot Orderbook": 135831
+          }
+        }
+      ],
+      [
+        1787184000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 3228141,
+            "Hyperliquid Spot Orderbook": 116881
+          }
+        }
+      ],
+      [
+        1787270400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 4805386,
+            "Hyperliquid Spot Orderbook": 136288
+          }
+        }
+      ],
+      [
+        1787356800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2286369,
+            "Hyperliquid Spot Orderbook": 86936
+          }
+        }
+      ],
+      [
+        1787443200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2273550,
+            "Hyperliquid Spot Orderbook": 127065
+          }
+        }
+      ],
+      [
+        1787529600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 3230715,
+            "Hyperliquid Spot Orderbook": 129506
+          }
+        }
+      ],
+      [
+        1787616000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 3324688,
+            "Hyperliquid Spot Orderbook": 97893
+          }
+        }
+      ],
+      [
+        1787702400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2176370,
+            "Hyperliquid Spot Orderbook": 127652
+          }
+        }
+      ],
+      [
+        1787788800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2682029,
+            "Hyperliquid Spot Orderbook": 92664
+          }
+        }
+      ],
+      [
+        1787875200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2442919,
+            "Hyperliquid Spot Orderbook": 127097
+          }
+        }
+      ],
+      [
+        1787961600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 709075,
+            "Hyperliquid Spot Orderbook": 49250
+          }
+        }
+      ],
+      [
+        1788048000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1491902,
+            "Hyperliquid Spot Orderbook": 89247
+          }
+        }
+      ],
+      [
+        1788134400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1820995,
+            "Hyperliquid Spot Orderbook": 109786
+          }
+        }
+      ],
+      [
+        1788220800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1922727,
+            "Hyperliquid Spot Orderbook": 57548
+          }
+        }
+      ],
+      [
+        1788307200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1670062,
+            "Hyperliquid Spot Orderbook": 60011
+          }
+        }
+      ],
+      [
+        1788393600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2584528,
+            "Hyperliquid Spot Orderbook": 113694
+          }
+        }
+      ],
+      [
+        1788480000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2200846,
+            "Hyperliquid Spot Orderbook": 74384
+          }
+        }
+      ],
+      [
+        1788566400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 791893,
+            "Hyperliquid Spot Orderbook": 74571
+          }
+        }
+      ],
+      [
+        1788652800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1251833,
+            "Hyperliquid Spot Orderbook": 55967
+          }
+        }
+      ],
+      [
+        1788739200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1370737,
+            "Hyperliquid Spot Orderbook": 49131
+          }
+        }
+      ],
+      [
+        1788825600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1745522,
+            "Hyperliquid Spot Orderbook": 55062
+          }
+        }
+      ],
+      [
+        1788912000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1765497,
+            "Hyperliquid Spot Orderbook": 54169
+          }
+        }
+      ],
+      [
+        1788998400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1970984,
+            "Hyperliquid Spot Orderbook": 106861
+          }
+        }
+      ],
+      [
+        1789084800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1072201,
+            "Hyperliquid Spot Orderbook": 56906
+          }
+        }
+      ],
+      [
+        1789171200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 545557,
+            "Hyperliquid Spot Orderbook": 38572
+          }
+        }
+      ],
+      [
+        1789257600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1032831,
+            "Hyperliquid Spot Orderbook": 34036
+          }
+        }
+      ],
+      [
+        1789344000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2127448,
+            "Hyperliquid Spot Orderbook": 65719
+          }
+        }
+      ],
+      [
+        1789430400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2352754,
+            "Hyperliquid Spot Orderbook": 51575
+          }
+        }
+      ],
+      [
+        1789516800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2139364,
+            "Hyperliquid Spot Orderbook": 71147
+          }
+        }
+      ],
+      [
+        1789603200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1832033,
+            "Hyperliquid Spot Orderbook": 109690
+          }
+        }
+      ],
+      [
+        1789689600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2936516,
+            "Hyperliquid Spot Orderbook": 134901
+          }
+        }
+      ],
+      [
+        1789776000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1396457,
+            "Hyperliquid Spot Orderbook": 110435
+          }
+        }
+      ],
+      [
+        1789862400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1694475,
+            "Hyperliquid Spot Orderbook": 57539
+          }
+        }
+      ],
+      [
+        1789948800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 3541695,
+            "Hyperliquid Spot Orderbook": 121912
+          }
+        }
+      ],
+      [
+        1790035200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2251661,
+            "Hyperliquid Spot Orderbook": 123048
+          }
+        }
+      ],
+      [
+        1790121600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2059082,
+            "Hyperliquid Spot Orderbook": 58189
+          }
+        }
+      ],
+      [
+        1790208000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2727795,
+            "Hyperliquid Spot Orderbook": 74233
+          }
+        }
+      ],
+      [
+        1790294400,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1811727,
+            "Hyperliquid Spot Orderbook": 49584
+          }
+        }
+      ],
+      [
+        1790380800,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 876421,
+            "Hyperliquid Spot Orderbook": 23913
+          }
+        }
+      ],
+      [
+        1790467200,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1298840,
+            "Hyperliquid Spot Orderbook": 39051
+          }
+        }
+      ],
+      [
+        1790553600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1861257,
+            "Hyperliquid Spot Orderbook": 61532
+          }
+        }
+      ],
+      [
+        1790640000,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 1765187,
+            "Hyperliquid Spot Orderbook": 59216
+          }
+        }
+      ]
+    ],
+    "change_1d": -5.12,
+    "chainBreakdown": {
+      "Hyperliquid L1": {
+        "total24h": 1824403,
+        "total48hto24h": 1922789,
+        "total7d": 12766027,
+        "total14dto7d": 16520873,
+        "total30d": 56571307,
+        "total60dto30d": 49551666,
+        "total1y": 687239789,
+        "total7DaysAgo": 2374709,
+        "total30DaysAgo": 1581149,
+        "totalAllTime": 1286827527,
+        "average1y": 1882848.7369863014,
+        "monthlyAverage1y": 57313915.55386302,
+        "change_1d": -5.12,
+        "change_7d": -23.17,
+        "change_1m": 15.38,
+        "change_7dover7d": -22.73,
+        "change_30dover30d": 14.17
+      }
+    }
+  }
+}
