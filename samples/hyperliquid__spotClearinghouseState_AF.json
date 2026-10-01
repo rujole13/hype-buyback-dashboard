@@ -1,6 +1,6 @@
 {
   "_probe": {
-    "captured_at": "2026-09-30T11:45:55.989275+00:00",
+    "captured_at": "2026-10-01T12:14:42.694046+00:00",
     "url": "https://api.hyperliquid.xyz/info",
     "method": "POST",
     "request_body": {
@@ -8,15 +8,15 @@
       "user": "0xfefefefefefefefefefefefefefefefefefefefe"
     },
     "http_status": 200,
-    "elapsed_ms": 145
+    "elapsed_ms": 204
   },
   "payload": {
     "balances": [
       {
         "coin": "USDC",
         "token": 0,
-        "total": "144025.37146",
-        "hold": "9999.44196",
+        "total": "92203.355665",
+        "hold": "9999.14685",
         "entryNtl": "0.0"
       },
       {
@@ -134,9 +134,9 @@
       {
         "coin": "KNTQ",
         "token": 124,
-        "total": "3916496.2494191998",
+        "total": "3919671.84494574",
         "hold": "0.0",
-        "entryNtl": "816213.5466147"
+        "entryNtl": "817511.31408205"
       },
       {
         "coin": "MUNCH",
@@ -148,9 +148,9 @@
       {
         "coin": "HYPE",
         "token": 150,
-        "total": "47583336.7747392282",
+        "total": "47609734.5847392306",
         "hold": "0.0",
-        "entryNtl": "1327804344.9513533115"
+        "entryNtl": "1330132008.7543532848"
       },
       {
         "coin": "STAR",
@@ -190,14 +190,14 @@
       {
         "coin": "USDE",
         "token": 235,
-        "total": "5059.46273385",
+        "total": "5112.09325536",
         "hold": "0.0",
         "entryNtl": "4172.24015226"
       },
       {
         "coin": "USDT0",
         "token": 268,
-        "total": "1419.38806135",
+        "total": "1563.94620207",
         "hold": "0.0",
         "entryNtl": "18.60716354"
       },
