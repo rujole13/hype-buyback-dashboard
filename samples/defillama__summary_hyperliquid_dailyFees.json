@@ -1,11 +1,11 @@
 {
   "_probe": {
-    "captured_at": "2026-10-08T12:38:25.095069+00:00",
+    "captured_at": "2026-10-09T12:25:49.759744+00:00",
     "url": "https://api.llama.fi/summary/fees/hyperliquid?dataType=dailyFees",
     "method": "GET",
     "request_body": null,
     "http_status": 200,
-    "elapsed_ms": 32
+    "elapsed_ms": 40
   },
   "payload": {
     "id": "parent#hyperliquid",
@@ -29,7 +29,8 @@
       "Hyperliquid",
       "Hyperliquid HLP",
       "Hyperliquid Perps",
-      "Hyperliquid Spot Orderbook"
+      "Hyperliquid Spot Orderbook",
+      "Hyperliquid Outcomes"
     ],
     "childProtocols": [
       {
@@ -39,7 +40,7 @@
         "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/fees/hyperliquid-hlp.ts",
         "methodology": {
           "UserFees": "Fees paid by users",
-          "Fees": "1% of perp and spot trading revenue (excluding builders and unit revenue) share for HLP.",
+          "Fees": "1% of perp and spot trading revenue (after builder code fees, maker rebates, HIP-3 deployer and unit revenue) share for HLP.",
           "Revenue": "No revenue.",
           "ProtocolRevenue": "Fees going to treasury",
           "HoldersRevenue": "Fees going to governance token holders",
@@ -104,30 +105,65 @@
         "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hyperliquid-spot",
         "methodology": {
           "UserFees": "Swap fees paid by users",
-          "Fees": "Include spot trading fees, unit protocol fees, and HYPE burned in successful HIP-1 token-deployment auctions, excluding perps fees.",
-          "Revenue": "97% of spot trading fees before 30 Aug 2025 and 99% thereafter go to Assistance Fund for buying HYPE tokens, excluding unit protocol fees; HYPE paid in successful HIP-1 token-deployment auctions is burned.",
+          "Fees": "Include spot trading fees (builder code fees included), unit protocol fees, and HYPE burned in successful HIP-1 token-deployment auctions, excluding perps fees.",
+          "Revenue": "97% of spot trading fees before 30 Aug 2025 and 99% thereafter, after builder code fees and maker rebates, go to Assistance Fund for buying HYPE tokens, excluding unit protocol fees; HYPE paid in successful HIP-1 token-deployment auctions is burned.",
           "ProtocolRevenue": "Protocol doesn't keep any fees.",
-          "HoldersRevenue": "97% of spot trading fees before 30 Aug 2025 and 99% thereafter go to Assistance Fund for buying HYPE tokens, excluding unit protocol fees; HYPE paid in successful HIP-1 token-deployment auctions is permanently burned.",
-          "SupplySideRevenue": "1% of fees go to HLP Vault suppliers, before 30 Aug 2025 it was 3% + fees for unit protocol."
+          "HoldersRevenue": "97% of spot trading fees before 30 Aug 2025 and 99% thereafter, after builder code fees and maker rebates, go to Assistance Fund for buying HYPE tokens, excluding unit protocol fees; HYPE paid in successful HIP-1 token-deployment auctions is permanently burned.",
+          "SupplySideRevenue": "1% of spot fees after builder code fees and maker rebates go to HLP Vault suppliers (3% before 30 Aug 2025), plus fees for unit protocol, spot builder code fees and spot maker rebates."
         },
         "defaultChartView": null,
         "breakdownMethodology": {
           "Fees": {
-            "Spot Fees": "Fees collected on all spot trades, excluding trades on markets with Unit assets (eg bridged BTC).",
-            "Spot fees on Unit markets": "Fees from spot trades on markets that include an asset deployed by Unit, in these spot markets all fees go to Unit.",
+            "Spot Fees": "Fees collected on all spot trades, excluding trades on markets with Unit assets (eg bridged BTC) and builder code fees.",
+            "Spot fees on Unit markets": "Fees from spot trades on markets that include an asset deployed by Unit, excluding builder code fees, in these spot markets all fees go to Unit.",
+            "Builder Code Fees": "Fees added on top of spot trades by other platforms building on top of Hyperliquid.",
             "Spot Deployment Auction Burns": "HYPE paid and permanently burned in successful HIP-1 token-deployment auctions."
           },
           "Revenue": {
-            "Spot Fees": "97% of spot trade fees before 30 Aug 2025 and 99% thereafter, excluding perp fees and unit protocol fees.",
+            "Spot Fees": "97% of spot trade fees before 30 Aug 2025 and 99% thereafter, after builder code fees and maker rebates, excluding perp fees and unit protocol fees.",
             "Spot Deployment Auction Burns": "HIP-1 token-deployment auction payments permanently burned rather than retained or distributed."
           },
           "SupplySideRevenue": {
-            "Unit Revenue": "All fees earned on Unit spot markets go to Unit",
-            "HLP": "1% of the spot fees go to HLP vault (used to be 3% before 30 Aug 2025)"
+            "Unit Revenue": "Fees earned on Unit spot markets go to Unit, after builder code fees paid in Unit assets.",
+            "HLP": "1% of the spot fees after builder code fees and maker rebates go to HLP vault (used to be 3% before 30 Aug 2025)",
+            "Builder Code Distribution": "All builder code fees on spot trades are passed down to the platforms that routed them.",
+            "Maker Rebates": "Spot fees rebated and distributed back to makers, all paid by Hyperliquid, including rebates paid in Unit assets."
           },
           "HoldersRevenue": {
-            "Token Buy Back": "97% of spot trade fees before 30 Aug 2025 and 99% thereafter, excluding perp fees and unit protocol fees, for buying back HYPE tokens.",
+            "Token Buy Back": "97% of spot trade fees before 30 Aug 2025 and 99% thereafter, after builder code fees and maker rebates, excluding perp fees and unit protocol fees, for buying back HYPE tokens.",
             "Spot Deployment Auction Burns": "HYPE permanently removed from supply through successful HIP-1 token-deployment auctions."
+          }
+        }
+      },
+      {
+        "name": "Hyperliquid Outcomes",
+        "defillamaId": "8941",
+        "displayName": "Hyperliquid Outcomes",
+        "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hyperliquid-outcome",
+        "methodology": {
+          "Volume": "USD value of HIP-4 outcome-market trades on Hyperliquid: price times shares over every buy and sell fill, halved so each trade is counted once. Merges, splits and settlements are not trades and are excluded.",
+          "NotionalVolume": "Shares traded on HIP-4 outcome markets, each share valued at its $1 payout, halved so each trade is counted once.",
+          "Fees": "Fees users pay when closing or settling HIP-4 outcome positions, including builder-code fees added by front-ends. Hyperliquid charged no outcome fee of its own before 15 Aug 2026.",
+          "Revenue": "99% of outcome fees net of builder-code fees, sent to the Assistance Fund to buy HYPE.",
+          "ProtocolRevenue": "Hyperliquid's protocol keeps no outcome fees; they go to the Assistance Fund and the HLP vault.",
+          "HoldersRevenue": "99% of outcome fees net of builder-code fees, used by the Assistance Fund to buy back HYPE.",
+          "SupplySideRevenue": "Builder-code fees paid to the front-ends that routed the trades, plus 1% of the remaining outcome fees to HLP vault depositors."
+        },
+        "defaultChartView": null,
+        "breakdownMethodology": {
+          "Fees": {
+            "Outcome Fees": "Fees on HIP-4 outcome positions closed or settled, excluding builder-code fees.",
+            "Builder Code Fees": "Fees added on top by front-ends building on Hyperliquid, charged on outcome sells."
+          },
+          "Revenue": {
+            "Outcome Fees": "99% of outcome fees net of builder-code fees."
+          },
+          "SupplySideRevenue": {
+            "Builder Code Distribution": "Builder-code fees passed in full to the front-ends that routed the trades.",
+            "HLP": "1% of outcome fees net of builder-code fees go to the HLP vault."
+          },
+          "HoldersRevenue": {
+            "Token Buy Back": "99% of outcome fees net of builder-code fees, used to buy back HYPE."
           }
         }
       }
@@ -152,13 +188,13 @@
     "breakdownMethodology": null,
     "slug": "hyperliquid",
     "protocolType": "protocol",
-    "total24h": 3531755,
-    "total48hto24h": 2470722,
-    "total7d": 18696194,
-    "total30d": 90550220,
-    "total1y": 929051797,
-    "annualized1y": 929051797,
-    "totalAllTime": 1644943776,
+    "total24h": 3120448,
+    "total48hto24h": 3532464,
+    "total7d": 19383663,
+    "total30d": 90843041,
+    "total1y": 928437723,
+    "annualized1y": 928437723,
+    "totalAllTime": 1648064933,
     "totalDataChart": [
       [
         1734912000,
@@ -560,11 +596,7 @@
         1743638400,
         1425036
       ],
-      "__truncated__ 450 items omitted",
-      [
-        1782777600,
-        2122219
-      ],
+      "__truncated__ 451 items omitted",
       [
         1782864000,
         2902694
@@ -959,7 +991,11 @@
       ],
       [
         1791331200,
-        3531755
+        3532464
+      ],
+      [
+        1791417600,
+        3120448
       ]
     ],
     "totalDataChartBreakdown": [
@@ -1953,17 +1989,7 @@
           }
         }
       ],
-      "__truncated__ 450 items omitted",
-      [
-        1782777600,
-        {
-          "Hyperliquid L1": {
-            "Hyperliquid HLP": 15145,
-            "Hyperliquid Perps": 2052624,
-            "Hyperliquid Spot Orderbook": 54450
-          }
-        }
-      ],
+      "__truncated__ 451 items omitted",
       [
         1782864000,
         {
@@ -2950,31 +2976,43 @@
           "Hyperliquid L1": {
             "Hyperliquid HLP": 22496,
             "Hyperliquid Perps": 3428042,
-            "Hyperliquid Spot Orderbook": 81217
+            "Hyperliquid Spot Orderbook": 81217,
+            "Hyperliquid Outcomes": 709
+          }
+        }
+      ],
+      [
+        1791417600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 19333,
+            "Hyperliquid Perps": 3023627,
+            "Hyperliquid Spot Orderbook": 76910,
+            "Hyperliquid Outcomes": 578
           }
         }
       ]
     ],
-    "change_1d": 42.94,
+    "change_1d": -11.66,
     "chainBreakdown": {
       "Hyperliquid L1": {
-        "total24h": 3531755,
-        "total48hto24h": 2470722,
-        "total7d": 18696194,
-        "total14dto7d": 19363967,
-        "total30d": 90550220,
-        "total60dto30d": 86980855,
-        "total1y": 929051797,
-        "total7DaysAgo": 2190573,
-        "total30DaysAgo": 2316128,
-        "totalAllTime": 1644943776,
-        "average1y": 2545347.389041096,
-        "monthlyAverage1y": 77480374.52241096,
-        "change_1d": 42.94,
-        "change_7d": 61.23,
-        "change_1m": 52.49,
-        "change_7dover7d": -3.45,
-        "change_30dover30d": 4.1
+        "total24h": 3120448,
+        "total48hto24h": 3532464,
+        "total7d": 19383663,
+        "total14dto7d": 17675883,
+        "total30d": 90843041,
+        "total60dto30d": 88966471,
+        "total1y": 928437723,
+        "total7DaysAgo": 2433688,
+        "total30DaysAgo": 2828336,
+        "totalAllTime": 1648064933,
+        "average1y": 2543664.994520548,
+        "monthlyAverage1y": 77429162.43320549,
+        "change_1d": -11.66,
+        "change_7d": 28.22,
+        "change_1m": 10.33,
+        "change_7dover7d": 9.66,
+        "change_30dover30d": 2.11
       }
     }
   }
