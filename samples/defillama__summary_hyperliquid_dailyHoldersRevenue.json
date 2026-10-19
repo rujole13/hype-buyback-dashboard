@@ -1,11 +1,11 @@
 {
   "_probe": {
-    "captured_at": "2026-10-18T10:13:25.301871+00:00",
+    "captured_at": "2026-10-19T11:50:25.114173+00:00",
     "url": "https://api.llama.fi/summary/fees/hyperliquid?dataType=dailyHoldersRevenue",
     "method": "GET",
     "request_body": null,
     "http_status": 200,
-    "elapsed_ms": 806
+    "elapsed_ms": 59
   },
   "payload": {
     "id": "parent#hyperliquid",
@@ -65,10 +65,10 @@
         "methodologyURL": "https://github.com/DefiLlama/dimension-adapters/blob/master/dexs/hyperliquid-perp",
         "methodology": {
           "UserFees": "Fees paid by users",
-          "Fees": "Include perps trading fees on crypto and HIP-3 deployed markets + builders fees, excluding all spot fees.",
-          "Revenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees.",
+          "Fees": "Include perps trading fees on crypto and HIP-3 deployed markets + builders fees, plus Hyperliquid's 90% share of cost-adjusted reserve yield from AQAv2 stablecoin deployers since 27 Aug 2026, excluding all spot fees.",
+          "Revenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees, plus Hyperliquid's 90% share of AQAv2 stablecoin reserve yield since 27 Aug 2026.",
           "ProtocolRevenue": "Protocol doesn't keep any fees.",
-          "HoldersRevenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees.",
+          "HoldersRevenue": "99% of fees go to Assistance Fund for buying HYPE tokens, excluding builders fees, plus Hyperliquid's 90% share of AQAv2 stablecoin reserve yield since 27 Aug 2026.",
           "SupplySideRevenue": "1% of fees go to HLP Vault suppliers, before 30 Aug 2025 it was 3% + fees for builders.",
           "Volume": "Track trading volume on all perps markets (including HIP-3 markets), excluding all spot markets volume."
         },
@@ -188,13 +188,13 @@
     "breakdownMethodology": null,
     "slug": "hyperliquid",
     "protocolType": "protocol",
-    "total24h": 1300885,
-    "total48hto24h": 2422551,
-    "total7d": 16072592,
-    "total30d": 69938325,
-    "total1y": 689131773,
-    "annualized1y": 689131773,
-    "totalAllTime": 1352978583,
+    "total24h": 2031930,
+    "total48hto24h": 1300885,
+    "total7d": 16406238,
+    "total30d": 68427801,
+    "total1y": 690096628,
+    "annualized1y": 690096628,
+    "totalAllTime": 1355010513,
     "totalDataChart": [
       [
         1734912000,
@@ -596,11 +596,7 @@
         1743638400,
         1342024
       ],
-      "__truncated__ 460 items omitted",
-      [
-        1783641600,
-        1241825
-      ],
+      "__truncated__ 461 items omitted",
       [
         1783728000,
         639667
@@ -996,6 +992,10 @@
       [
         1792195200,
         1300885
+      ],
+      [
+        1792281600,
+        2031930
       ]
     ],
     "totalDataChartBreakdown": [
@@ -1899,17 +1899,7 @@
           }
         }
       ],
-      "__truncated__ 460 items omitted",
-      [
-        1783641600,
-        {
-          "Hyperliquid L1": {
-            "Hyperliquid Perps": 1209155,
-            "Hyperliquid Spot Orderbook": 32670,
-            "Hyperliquid Outcomes": 0
-          }
-        }
-      ],
+      "__truncated__ 461 items omitted",
       [
         1783728000,
         {
@@ -2899,28 +2889,38 @@
             "Hyperliquid Outcomes": 3054
           }
         }
+      ],
+      [
+        1792281600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid Perps": 1881883,
+            "Hyperliquid Spot Orderbook": 146715,
+            "Hyperliquid Outcomes": 3332
+          }
+        }
       ]
     ],
-    "change_1d": -46.3,
+    "change_1d": 56.2,
     "chainBreakdown": {
       "Hyperliquid L1": {
-        "total24h": 1300885,
-        "total48hto24h": 2422551,
-        "total7d": 16072592,
-        "total14dto7d": 14185836,
-        "total30d": 69938325,
-        "total60dto30d": 85422889,
-        "total1y": 689131773,
-        "total7DaysAgo": 1384647,
-        "total30DaysAgo": 2411461,
-        "totalAllTime": 1352978583,
-        "average1y": 1888032.2547945206,
-        "monthlyAverage1y": 57471701.83594521,
-        "change_1d": -46.3,
-        "change_7d": -6.05,
-        "change_1m": -46.05,
-        "change_7dover7d": 13.3,
-        "change_30dover30d": -18.13
+        "total24h": 2031930,
+        "total48hto24h": 1300885,
+        "total7d": 16406238,
+        "total14dto7d": 14389815,
+        "total30d": 68427801,
+        "total60dto30d": 84083466,
+        "total1y": 690096628,
+        "total7DaysAgo": 1698284,
+        "total30DaysAgo": 3542454,
+        "totalAllTime": 1355010513,
+        "average1y": 1890675.693150685,
+        "monthlyAverage1y": 57552168.099506855,
+        "change_1d": 56.2,
+        "change_7d": 19.65,
+        "change_1m": -42.64,
+        "change_7dover7d": 14.01,
+        "change_30dover30d": -18.62
       }
     }
   }
