@@ -1,6 +1,6 @@
 {
   "_probe": {
-    "captured_at": "2026-10-19T11:50:19.398529+00:00",
+    "captured_at": "2026-10-20T10:48:14.754851+00:00",
     "url": "https://api.hyperliquid.xyz/info",
     "method": "POST",
     "request_body": {
@@ -8,14 +8,14 @@
       "user": "0xfefefefefefefefefefefefefefefefefefefefe"
     },
     "http_status": 200,
-    "elapsed_ms": 209
+    "elapsed_ms": 236
   },
   "payload": {
     "balances": [
       {
         "coin": "USDC",
         "token": 0,
-        "total": "3322.36191528",
+        "total": "8523.70101528",
         "hold": "0.0",
         "entryNtl": "0.0"
       },
@@ -78,9 +78,9 @@
       {
         "coin": "BRIDGE",
         "token": 73,
-        "total": "495295.3195153",
+        "total": "535415.7588648",
         "hold": "0.0",
-        "entryNtl": "27522.08680343"
+        "entryNtl": "29520.55274812"
       },
       {
         "coin": "NEIRO",
@@ -134,9 +134,16 @@
       {
         "coin": "KNTQ",
         "token": 124,
-        "total": "4264906.6803412205",
+        "total": "4271230.1707974896",
         "hold": "0.0",
-        "entryNtl": "925953.35986163"
+        "entryNtl": "928181.63789396"
+      },
+      {
+        "coin": "PIP",
+        "token": 127,
+        "total": "800.0",
+        "hold": "0.0",
+        "entryNtl": "1782.24"
       },
       {
         "coin": "MUNCH",
@@ -148,9 +155,9 @@
       {
         "coin": "HYPE",
         "token": 150,
-        "total": "48130692.9347392321",
+        "total": "48145989.144739233",
         "hold": "0.0",
-        "entryNtl": "1375262772.2761232853"
+        "entryNtl": "1376466831.0207033157"
       },
       {
         "coin": "STAR",
@@ -190,14 +197,14 @@
       {
         "coin": "USDE",
         "token": 235,
-        "total": "5452.23851434",
+        "total": "5458.35433395",
         "hold": "0.0",
         "entryNtl": "4172.24015226"
       },
       {
         "coin": "USDT0",
         "token": 268,
-        "total": "3684.68513753",
+        "total": "3768.9017072",
         "hold": "0.0",
         "entryNtl": "18.60716354"
       },
