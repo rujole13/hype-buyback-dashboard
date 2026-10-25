@@ -1,26 +1,26 @@
 {
   "_probe": {
-    "captured_at": "2026-10-24T10:07:06.638901+00:00",
-    "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1761300415/50",
+    "captured_at": "2026-10-25T10:32:21.644060+00:00",
+    "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1761388324/50",
     "method": "GET",
     "request_body": null,
     "http_status": 200,
-    "elapsed_ms": 352
+    "elapsed_ms": 385
   },
   "payload": {
     "token": "HYPE",
-    "lastUpdate": 1761287452,
-    "holdersCount": 194894,
+    "lastUpdate": 1761372052,
+    "holdersCount": 195091,
     "holders": {
-      "0x2222222222222222222222222222222222222222": 38332596.60879169,
-      "0xfefefefefefefefefefefefefefefefefefefefe": 33858352.09,
+      "0x2222222222222222222222222222222222222222": 39602494.38266429,
+      "0xfefefefefefefefefefefefefefefefefefefefe": 33902466.85,
       "0xfae95f601f3a25ace60d19dbb929f2a5c57e3571": 2874236.5778,
       "0xa350d83fdcc7ac81dfaedea1a87108401ccb015f": 2329909.544,
       "0xc4ff1b50648213bdb064bea8c9e25bfa0606f93a": 1869900.7731413,
       "0x7f0269d7438a27811e6fa0fc33b51a79ea79be9e": 1867882.016,
       "0x716bd8d3337972db99995dda5c4b34d954a61d95": 1702806.08,
-      "0x0d0707963952f2fba59dd06f2b425ace40b492fe": 1571330.51842007,
       "0x4e14fc11f58b64740e66e4b1aa188a4b007c0eab": 1495955.82377139,
+      "0x0d0707963952f2fba59dd06f2b425ace40b492fe": 1491899.74005781,
       "0xb2833d8822baa7b4e6418c0d891ec94db31adf5a": 1318521.34791308,
       "0xd22fd233a6ed7b6a19c659fb4f05fefa4f0c7043": 1282394.03,
       "0xffa8db7b38579e6a2d14f9b347a9ace4d044cd54": 1231508.04703243,
@@ -43,6 +43,7 @@
       "0xb9a2bc88d22e82628acdb2a86fc297a038b3158e": 560672.83,
       "0x992ec71207c9e183e64c81461908f1a1a783af6a": 554069.65575554,
       "0x09530f1cefa9a6b6f978a41e4a4ce412b4d81571": 508426.8062,
+      "0x18ed0f81334d32027da587f92eab8c53a87eacbd": 497464.95473,
       "0x7fdafde5cfb5465924316eced2d3715494c517d1": 490735.98115608,
       "0xb952a94e9a9a63b393946dea15e1d86d22656331": 463016.86,
       "0x9f3b90f03dbe29c31ed1d05d7f6515248b9de2cf": 462204.1831,
@@ -60,8 +61,7 @@
       "0xf704ebc79aee732265c7c986fea50a9c01ab7f8d": 346500.00316632,
       "0x89f3f64a8ab9787dc9c9769b2c044557fb6523b0": 342582.1941,
       "0x93edcddb65c0c298dc606dea26909f8c7b4c5923": 328654.0,
-      "0xa1830e8d9f019feb448478a171bb37cc6c4c0482": 326980.9341978,
-      "0x17a4ce9320bec0ac79420f0af19848044a469d8d": 326221.38236676
+      "0xa1830e8d9f019feb448478a171bb37cc6c4c0482": 326980.9341978
     },
     "length": 50
   }
