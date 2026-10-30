@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T12:07:28.855750+00:00",
+  "generated_at": "2026-10-30T11:58:42.855305+00:00",
   "assistance_fund_address": "0xfefefefefefefefefefefefefefefefefefefefe",
   "probes": [
     {
@@ -13,12 +13,12 @@
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 241,
+      "elapsed_ms": 206,
       "sample_file": "samples/hyperliquid__metaAndAssetCtxs.json",
       "findings": [
         "235 perp markets, 235 asset contexts",
-        "HYPE perp: mid=87.8135 dayNtlVlm=764213023.9646394253 openInterest=22243398.0400000177",
-        "24h notional volume across all perps: $5,336,167,698"
+        "HYPE perp: mid=91.8225 dayNtlVlm=2714843372.769753933 openInterest=22203623.5599999763",
+        "24h notional volume across all perps: $16,578,548,880"
       ]
     },
     {
@@ -32,7 +32,7 @@
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 323,
+      "elapsed_ms": 371,
       "sample_file": "samples/hyperliquid__spotMetaAndAssetCtxs.json",
       "findings": [
         "511 spot tokens",
@@ -51,11 +51,11 @@
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 224,
+      "elapsed_ms": 170,
       "sample_file": "samples/hyperliquid__spotClearinghouseState_AF.json",
       "findings": [
         "assistance fund holds 34 spot balances",
-        "  USDC: total=210789.50419828 hold=9999.71236",
+        "  USDC: total=2233.52780828 hold=0.0",
         "  PURR: total=0.62505 hold=0.0",
         "  JEFF: total=0.9597 hold=0.0",
         "  TRUMP: total=12448.3012727 hold=0.0",
@@ -64,7 +64,7 @@
         "  MEOW: total=193600.310907 hold=0.0",
         "  ATEHUN: total=0.01961863 hold=0.0",
         "  PEAR: total=20199.817368 hold=0.0",
-        "  BRIDGE: total=1225808.7300169 hold=0.0",
+        "  BRIDGE: total=1325129.8419623999 hold=0.0",
         "  NEIRO: total=44835.08891 hold=0.0",
         "  BERA: total=11123.888722 hold=0.0",
         "  WOW: total=57728.41925 hold=0.0",
@@ -72,17 +72,17 @@
         "  STHYPE: total=0.00000002 hold=0.0",
         "  HPL: total=562233.56820001 hold=0.0",
         "  KHYPE: total=0.009909 hold=0.0",
-        "  KNTQ: total=4420983.5718988702 hold=0.0",
+        "  KNTQ: total=4442486.3605532302 hold=0.0",
         "  PIP: total=800.0 hold=0.0",
         "  MUNCH: total=910220.59144 hold=0.0",
-        "  HYPE: total=48321299.5047392324 hold=0.0",
+        "  HYPE: total=48381420.4547392279 hold=0.0",
         "  STAR: total=97843.63812127 hold=0.0",
         "  FARM: total=34.0 hold=0.0",
         "  HYENA: total=0.21014774 hold=0.0",
         "  LIQD: total=0.19234809 hold=0.0",
         "  OTTI: total=528.36711129 hold=0.0",
-        "  USDE: total=5627.63811496 hold=0.0",
-        "  USDT0: total=4739.47660973 hold=0.0",
+        "  USDE: total=5728.58407796 hold=0.0",
+        "  USDT0: total=5253.57814679 hold=0.0",
         "  JOFF: total=4.2 hold=0.0",
         "  HWAVE: total=0.55960982 hold=0.0",
         "  THBILL: total=0.00000043 hold=0.0",
@@ -104,12 +104,12 @@
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 328,
+      "elapsed_ms": 492,
       "sample_file": "samples/hyperliquid__userFills_AF.json",
       "findings": [
         "2000 fills (most recent)",
-        "range: 2026-10-25 -> 2026-10-29",
-        "cadence: ~456.8 fills/day over 4.4 days",
+        "range: 2026-10-28 -> 2026-10-30",
+        "cadence: ~976.6 fills/day over 2.0 days",
         "fields per fill: ['closedPnl', 'coin', 'crossed', 'dir', 'fee', 'feeToken', 'hash', 'oid', 'px', 'side', 'startPosition', 'sz', 'tid', 'time', 'twapId']",
         "HYPE buy-side fills: 0"
       ]
@@ -122,19 +122,19 @@
       "request_body": {
         "type": "userFillsByTime",
         "user": "0xfefefefefefefefefefefefefefefefefefefefe",
-        "startTime": 1792670834123,
-        "endTime": 1793275634123,
+        "startTime": 1792756707318,
+        "endTime": 1793361507318,
         "aggregateByTime": true
       },
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 408,
+      "elapsed_ms": 481,
       "sample_file": "samples/hyperliquid__userFillsByTime_AF_7d.json",
       "findings": [
         "2000 fills (7d window)",
-        "range: 2026-10-22 -> 2026-10-27",
-        "cadence: ~424.1 fills/day over 4.7 days",
+        "range: 2026-10-23 -> 2026-10-28",
+        "cadence: ~427.5 fills/day over 4.7 days",
         "fields per fill: ['closedPnl', 'coin', 'crossed', 'dir', 'fee', 'feeToken', 'hash', 'oid', 'px', 'side', 'startPosition', 'sz', 'tid', 'time', 'twapId']",
         "HYPE buy-side fills: 0"
       ]
@@ -147,19 +147,19 @@
       "request_body": {
         "type": "userFillsByTime",
         "user": "0xfefefefefefefefefefefefefefefefefefefefe",
-        "startTime": 1790683634123,
-        "endTime": 1793275634123,
+        "startTime": 1790769507318,
+        "endTime": 1793361507318,
         "aggregateByTime": true
       },
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 482,
+      "elapsed_ms": 615,
       "sample_file": "samples/hyperliquid__userFillsByTime_AF_30d.json",
       "findings": [
         "2000 fills (30d window)",
-        "range: 2026-10-05 -> 2026-10-08",
-        "cadence: ~572.4 fills/day over 3.5 days",
+        "range: 2026-10-08 -> 2026-10-14",
+        "cadence: ~387.0 fills/day over 5.2 days",
         "fields per fill: ['closedPnl', 'coin', 'crossed', 'dir', 'fee', 'feeToken', 'hash', 'oid', 'px', 'side', 'startPosition', 'sz', 'tid', 'time', 'twapId']",
         "HYPE buy-side fills: 0"
       ]
@@ -172,19 +172,19 @@
       "request_body": {
         "type": "userFillsByTime",
         "user": "0xfefefefefefefefefefefefefefefefefefefefe",
-        "startTime": 1785499634123,
-        "endTime": 1793275634123,
+        "startTime": 1785585507318,
+        "endTime": 1793361507318,
         "aggregateByTime": true
       },
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 314,
+      "elapsed_ms": 518,
       "sample_file": "samples/hyperliquid__userFillsByTime_AF_90d.json",
       "findings": [
         "2000 fills (90d window)",
-        "range: 2026-10-05 -> 2026-10-08",
-        "cadence: ~572.4 fills/day over 3.5 days",
+        "range: 2026-10-08 -> 2026-10-14",
+        "cadence: ~387.0 fills/day over 5.2 days",
         "fields per fill: ['closedPnl', 'coin', 'crossed', 'dir', 'fee', 'feeToken', 'hash', 'oid', 'px', 'side', 'startPosition', 'sz', 'tid', 'time', 'twapId']",
         "HYPE buy-side fills: 0"
       ]
@@ -197,19 +197,19 @@
       "request_body": {
         "type": "userFillsByTime",
         "user": "0xfefefefefefefefefefefefefefefefefefefefe",
-        "startTime": 1777723634123,
-        "endTime": 1793275634123,
+        "startTime": 1777809507318,
+        "endTime": 1793361507318,
         "aggregateByTime": true
       },
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 293,
+      "elapsed_ms": 519,
       "sample_file": "samples/hyperliquid__userFillsByTime_AF_180d.json",
       "findings": [
         "2000 fills (180d window)",
-        "range: 2026-10-05 -> 2026-10-08",
-        "cadence: ~572.4 fills/day over 3.5 days",
+        "range: 2026-10-08 -> 2026-10-14",
+        "cadence: ~387.0 fills/day over 5.2 days",
         "fields per fill: ['closedPnl', 'coin', 'crossed', 'dir', 'fee', 'feeToken', 'hash', 'oid', 'px', 'side', 'startPosition', 'sz', 'tid', 'time', 'twapId']",
         "HYPE buy-side fills: 0"
       ]
@@ -222,19 +222,19 @@
       "request_body": {
         "type": "userFillsByTime",
         "user": "0xfefefefefefefefefefefefefefefefefefefefe",
-        "startTime": 1761739634123,
-        "endTime": 1793275634123,
+        "startTime": 1761825507318,
+        "endTime": 1793361507318,
         "aggregateByTime": true
       },
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 683,
+      "elapsed_ms": 567,
       "sample_file": "samples/hyperliquid__userFillsByTime_AF_365d.json",
       "findings": [
         "2000 fills (365d window)",
-        "range: 2026-10-05 -> 2026-10-08",
-        "cadence: ~572.4 fills/day over 3.5 days",
+        "range: 2026-10-08 -> 2026-10-14",
+        "cadence: ~387.0 fills/day over 5.2 days",
         "fields per fill: ['closedPnl', 'coin', 'crossed', 'dir', 'fee', 'feeToken', 'hash', 'oid', 'px', 'side', 'startPosition', 'sz', 'tid', 'time', 'twapId']",
         "HYPE buy-side fills: 0"
       ]
@@ -249,17 +249,17 @@
         "req": {
           "coin": "HYPE",
           "interval": "1h",
-          "startTime": 1790683634123,
-          "endTime": 1793275634123
+          "startTime": 1790769507318,
+          "endTime": 1793361507318
         }
       },
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 222,
+      "elapsed_ms": 239,
       "sample_file": "samples/hyperliquid__candleSnapshot_HYPE_1h.json",
       "findings": [
-        "721 candles, 2026-09-29 -> 2026-10-29",
+        "721 candles, 2026-09-30 -> 2026-10-30",
         "fields per candle: ['T', 'c', 'h', 'i', 'l', 'n', 'o', 's', 't', 'v']"
       ]
     },
@@ -273,17 +273,17 @@
         "req": {
           "coin": "HYPE",
           "interval": "1d",
-          "startTime": 1761739634123,
-          "endTime": 1793275634123
+          "startTime": 1761825507318,
+          "endTime": 1793361507318
         }
       },
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 235,
+      "elapsed_ms": 149,
       "sample_file": "samples/hyperliquid__candleSnapshot_HYPE_1d.json",
       "findings": [
-        "366 candles, 2025-10-29 -> 2026-10-29",
+        "366 candles, 2025-10-30 -> 2026-10-30",
         "fields per candle: ['T', 'c', 'h', 'i', 'l', 'n', 'o', 's', 't', 'v']"
       ]
     },
@@ -296,21 +296,21 @@
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 168,
+      "elapsed_ms": 156,
       "sample_file": "samples/defillama__fees_overview.json",
       "findings": [
-        "3105 protocols in the fees overview",
+        "3109 protocols in the fees overview",
         "10 entries matching 'hyperliquid':",
-        "  slug='hyperliquid-hlp' name='Hyperliquid HLP' category=Derivatives 24h=$14,871 30d=$476,223 allTime=$23,627,274",
-        "  slug='hyperliquid-perps' name='Hyperliquid Perps' category=Derivatives 24h=$2,821,394 30d=$77,677,087 allTime=$1,609,266,531",
-        "  slug='hyperliquid-spot-orderbook' name='Hyperliquid Spot Orderbook' category=Dexs 24h=$93,423 30d=$2,203,603 allTime=$68,537,608",
+        "  slug='hyperliquid-hlp' name='Hyperliquid HLP' category=Derivatives 24h=$43,847 30d=$501,642 allTime=$23,671,121",
+        "  slug='hyperliquid-perps' name='Hyperliquid Perps' category=Derivatives 24h=$6,072,809 30d=$80,861,929 allTime=$1,615,339,340",
+        "  slug='hyperliquid-spot-orderbook' name='Hyperliquid Spot Orderbook' category=Dexs 24h=$234,651 30d=$2,362,140 allTime=$68,772,259",
         "  slug='kinto-hyperliquid' name='Kinto Hyperliquid' category=Interface 24h=$0 30d=$0 allTime=$28,434",
-        "  slug='wallet-v-hyperliquid' name='Wallet V Hyperliquid' category=Interface 24h=$266 30d=$10,849 allTime=$150,521",
-        "  slug='hyperliquid-strategies-hype-staking' name='Hyperliquid Strategies HYPE Staking' category=Staking Pool 24h=$188,335 30d=$5,640,610 allTime=$18,861,622",
-        "  slug='hyperliquid-outcomes' name='Hyperliquid Outcomes' category=Prediction Market 24h=$4,464 30d=$82,617 allTime=$155,905",
+        "  slug='wallet-v-hyperliquid' name='Wallet V Hyperliquid' category=Interface 24h=$482 30d=$10,400 allTime=$151,003",
+        "  slug='hyperliquid-strategies-hype-staking' name='Hyperliquid Strategies HYPE Staking' category=Staking Pool 24h=$208,536 30d=$5,670,090 allTime=$19,070,158",
+        "  slug='hyperliquid-outcomes' name='Hyperliquid Outcomes' category=Prediction Market 24h=$5,581 30d=$86,325 allTime=$161,486",
         "  slug='infinex-hyperliquid-spot' name='Infinex Hyperliquid Spot' category=Interface 24h=$0 30d=$5 allTime=$5",
-        "  slug='wagyu-hyperliquid-deployer' name='Wagyu Hyperliquid Deployer' category=Services 24h=$600 30d=$1,948 allTime=$1,948",
-        "  slug='hyperliquid-l1' name='Hyperliquid L1' category=Chain 24h=$11,612 30d=$492,285 allTime=$15,826,694"
+        "  slug='wagyu-hyperliquid-deployer' name='Wagyu Hyperliquid Deployer' category=Services 24h=$2,224 30d=$49,925 allTime=$343,887",
+        "  slug='hyperliquid-l1' name='Hyperliquid L1' category=Chain 24h=$307,794 30d=$785,924 allTime=$16,134,488"
       ]
     },
     {
@@ -322,15 +322,15 @@
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 47,
+      "elapsed_ms": 62,
       "sample_file": "samples/defillama__summary_hyperliquid_dailyFees.json",
       "findings": [
         "displayName='Hyperliquid'",
-        "671 daily points",
-        "range: 2024-12-23 -> 2026-10-28",
-        "latest value: $2,934,152",
-        "total24h=$2,934,152",
-        "totalAllTime=$1,701,587,318",
+        "672 daily points",
+        "range: 2024-12-23 -> 2026-10-29",
+        "latest value: $6,356,888",
+        "total24h=$6,356,888",
+        "totalAllTime=$1,707,944,206",
         "methodology: None"
       ]
     },
@@ -347,11 +347,11 @@
       "sample_file": "samples/defillama__summary_hyperliquid_dailyRevenue.json",
       "findings": [
         "displayName='Hyperliquid'",
-        "671 daily points",
-        "range: 2024-12-23 -> 2026-10-28",
-        "latest value: $2,037,459",
-        "total24h=$2,037,459",
-        "totalAllTime=$1,375,542,600",
+        "672 daily points",
+        "range: 2024-12-23 -> 2026-10-29",
+        "latest value: $4,869,602",
+        "total24h=$4,869,602",
+        "totalAllTime=$1,380,412,202",
         "methodology: None"
       ]
     },
@@ -364,15 +364,15 @@
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 928,
+      "elapsed_ms": 958,
       "sample_file": "samples/defillama__summary_hyperliquid_dailyHoldersRevenue.json",
       "findings": [
         "displayName='Hyperliquid'",
-        "671 daily points",
-        "range: 2024-12-23 -> 2026-10-28",
-        "latest value: $2,037,459",
-        "total24h=$2,037,459",
-        "totalAllTime=$1,375,542,600",
+        "672 daily points",
+        "range: 2024-12-23 -> 2026-10-29",
+        "latest value: $4,869,602",
+        "total24h=$4,869,602",
+        "totalAllTime=$1,380,412,202",
         "methodology: None"
       ]
     },
@@ -385,7 +385,7 @@
       "ok": false,
       "http_status": 400,
       "error": "HTTP 400: Fees for hyperliquid-perp not found, please visit /overview/fees to see available protocols",
-      "elapsed_ms": 740,
+      "elapsed_ms": 816,
       "sample_file": null,
       "findings": []
     },
@@ -398,7 +398,7 @@
       "ok": false,
       "http_status": 400,
       "error": "HTTP 400: Fees for hyperliquid-perp not found, please visit /overview/fees to see available protocols",
-      "elapsed_ms": 779,
+      "elapsed_ms": 759,
       "sample_file": null,
       "findings": []
     },
@@ -411,7 +411,7 @@
       "ok": false,
       "http_status": 400,
       "error": "HTTP 400: Fees for hyperliquid-perp not found, please visit /overview/fees to see available protocols",
-      "elapsed_ms": 841,
+      "elapsed_ms": 755,
       "sample_file": null,
       "findings": []
     },
@@ -424,7 +424,7 @@
       "ok": false,
       "http_status": 400,
       "error": "HTTP 400: Fees for hyperliquid-spot not found, please visit /overview/fees to see available protocols",
-      "elapsed_ms": 754,
+      "elapsed_ms": 822,
       "sample_file": null,
       "findings": []
     },
@@ -437,7 +437,7 @@
       "ok": false,
       "http_status": 400,
       "error": "HTTP 400: Fees for hyperliquid-spot not found, please visit /overview/fees to see available protocols",
-      "elapsed_ms": 789,
+      "elapsed_ms": 803,
       "sample_file": null,
       "findings": []
     },
@@ -450,7 +450,7 @@
       "ok": false,
       "http_status": 400,
       "error": "HTTP 400: Fees for hyperliquid-spot not found, please visit /overview/fees to see available protocols",
-      "elapsed_ms": 817,
+      "elapsed_ms": 850,
       "sample_file": null,
       "findings": []
     },
@@ -463,7 +463,7 @@
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 616,
+      "elapsed_ms": 627,
       "sample_file": "samples/hypurrscan__tokenDetails_HYPE.json",
       "findings": [
         "fields: []"
@@ -478,7 +478,7 @@
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 464,
+      "elapsed_ms": 472,
       "sample_file": "samples/hypurrscan__tags_assistance_fund.json",
       "findings": [
         "tags for the AF address: {}"
@@ -487,118 +487,118 @@
     {
       "source": "hypurrscan",
       "name": "holdersAtTime_HYPE_0d",
-      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1793275634/50",
+      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1793361507/50",
       "method": "GET",
       "request_body": null,
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 466,
+      "elapsed_ms": 456,
       "sample_file": "samples/hypurrscan__holdersAtTime_HYPE_0d.json",
       "findings": [
-        "AF not in top 50 holders at 2026-10-29 (or no data this far back)"
+        "AF not in top 50 holders at 2026-10-30 (or no data this far back)"
       ]
     },
     {
       "source": "hypurrscan",
       "name": "holdersAtTime_HYPE_30d",
-      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1790683634/50",
+      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1790769507/50",
       "method": "GET",
       "request_body": null,
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 510,
+      "elapsed_ms": 496,
       "sample_file": "samples/hypurrscan__holdersAtTime_HYPE_30d.json",
       "findings": [
-        "AF not in top 50 holders at 2026-09-29 (or no data this far back)"
+        "AF not in top 50 holders at 2026-09-30 (or no data this far back)"
       ]
     },
     {
       "source": "hypurrscan",
       "name": "holdersAtTime_HYPE_90d",
-      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1785499634/50",
+      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1785585507/50",
       "method": "GET",
       "request_body": null,
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 474,
+      "elapsed_ms": 447,
       "sample_file": "samples/hypurrscan__holdersAtTime_HYPE_90d.json",
       "findings": [
-        "AF not in top 50 holders at 2026-07-31 (or no data this far back)"
+        "AF not in top 50 holders at 2026-08-01 (or no data this far back)"
       ]
     },
     {
       "source": "hypurrscan",
       "name": "holdersAtTime_HYPE_180d",
-      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1777723634/50",
+      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1777809507/50",
       "method": "GET",
       "request_body": null,
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 450,
+      "elapsed_ms": 468,
       "sample_file": "samples/hypurrscan__holdersAtTime_HYPE_180d.json",
       "findings": [
-        "AF not in top 50 holders at 2026-05-02 (or no data this far back)"
+        "AF not in top 50 holders at 2026-05-03 (or no data this far back)"
       ]
     },
     {
       "source": "hypurrscan",
       "name": "holdersAtTime_HYPE_365d",
-      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1761739634/50",
+      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1761825507/50",
       "method": "GET",
       "request_body": null,
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 478,
+      "elapsed_ms": 469,
       "sample_file": "samples/hypurrscan__holdersAtTime_HYPE_365d.json",
       "findings": [
-        "AF not in top 50 holders at 2025-10-29 (or no data this far back)"
+        "AF not in top 50 holders at 2025-10-30 (or no data this far back)"
       ]
     },
     {
       "source": "hypurrscan",
       "name": "holdersAtTime_HYPE_540d",
-      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1746619634/50",
+      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1746705507/50",
       "method": "GET",
       "request_body": null,
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 527,
+      "elapsed_ms": 617,
       "sample_file": "samples/hypurrscan__holdersAtTime_HYPE_540d.json",
       "findings": [
-        "AF not in top 50 holders at 2025-05-07 (or no data this far back)"
+        "AF not in top 50 holders at 2025-05-08 (or no data this far back)"
       ]
     },
     {
       "source": "hypurrscan",
       "name": "holdersAtTime_HYPE_730d",
-      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1730203634/50",
+      "url": "https://api.hypurrscan.io/holdersAtTimeWithLimit/HYPE/1730289507/50",
       "method": "GET",
       "request_body": null,
       "ok": true,
       "http_status": 200,
       "error": null,
-      "elapsed_ms": 518,
+      "elapsed_ms": 562,
       "sample_file": "samples/hypurrscan__holdersAtTime_HYPE_730d.json",
       "findings": [
-        "AF not in top 50 holders at 2024-10-29 (or no data this far back)"
+        "AF not in top 50 holders at 2024-10-30 (or no data this far back)"
       ]
     },
     {
       "source": "hypurrscan",
       "name": "transfers_recent_3d",
-      "url": "https://api.hypurrscan.io/transfers/1793016434/1793275634",
+      "url": "https://api.hypurrscan.io/transfers/1793102307/1793361507",
       "method": "GET",
       "request_body": null,
       "ok": false,
       "http_status": 401,
       "error": "HTTP 401: {\"type\": \"about:blank\", \"title\": \"Unauthorized\", \"detail\": \"No authorization token provided\", \"status\": 401}",
-      "elapsed_ms": 464,
+      "elapsed_ms": 469,
       "sample_file": null,
       "findings": []
     }
