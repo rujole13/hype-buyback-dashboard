@@ -1,6 +1,6 @@
 {
   "_probe": {
-    "captured_at": "2026-11-08T12:36:34.612761+00:00",
+    "captured_at": "2026-11-09T14:54:54.318527+00:00",
     "url": "https://api.hyperliquid.xyz/info",
     "method": "POST",
     "request_body": {
@@ -8,15 +8,15 @@
       "user": "0xfefefefefefefefefefefefefefefefefefefefe"
     },
     "http_status": 200,
-    "elapsed_ms": 173
+    "elapsed_ms": 231
   },
   "payload": {
     "balances": [
       {
         "coin": "USDC",
         "token": 0,
-        "total": "11334.40447023",
-        "hold": "9999.28368",
+        "total": "138763.18887823",
+        "hold": "9999.75332",
         "entryNtl": "0.0"
       },
       {
@@ -78,9 +78,9 @@
       {
         "coin": "BRIDGE",
         "token": 73,
-        "total": "1862220.4811788001",
+        "total": "1868319.3799646001",
         "hold": "0.0",
-        "entryNtl": "136280.96737791"
+        "entryNtl": "136929.11176211"
       },
       {
         "coin": "NEIRO",
@@ -120,9 +120,9 @@
       {
         "coin": "HPL",
         "token": 120,
-        "total": "562233.56820001",
+        "total": "600320.11109501",
         "hold": "0.0",
-        "entryNtl": "6465.12380073"
+        "entryNtl": "6885.21836886"
       },
       {
         "coin": "KHYPE",
@@ -134,9 +134,9 @@
       {
         "coin": "KNTQ",
         "token": 124,
-        "total": "4545931.0020733001",
+        "total": "4560794.6202532798",
         "hold": "0.0",
-        "entryNtl": "1046371.90382963"
+        "entryNtl": "1052624.0821619099"
       },
       {
         "coin": "PIP",
@@ -155,9 +155,9 @@
       {
         "coin": "HYPE",
         "token": 150,
-        "total": "48745543.7647392303",
+        "total": "48776027.6347392276",
         "hold": "0.0",
-        "entryNtl": "1426385598.8584532738"
+        "entryNtl": "1428657713.5194532871"
       },
       {
         "coin": "STAR",
@@ -197,14 +197,14 @@
       {
         "coin": "USDE",
         "token": 235,
-        "total": "6187.0413728",
+        "total": "6196.22158437",
         "hold": "0.0",
         "entryNtl": "4172.24015226"
       },
       {
         "coin": "USDT0",
         "token": 268,
-        "total": "6098.12802535",
+        "total": "6288.48695524",
         "hold": "0.0",
         "entryNtl": "18.60716354"
       },
