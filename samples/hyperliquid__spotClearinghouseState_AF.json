@@ -1,6 +1,6 @@
 {
   "_probe": {
-    "captured_at": "2026-11-18T14:56:29.365735+00:00",
+    "captured_at": "2026-11-19T15:03:21.438777+00:00",
     "url": "https://api.hyperliquid.xyz/info",
     "method": "POST",
     "request_body": {
@@ -8,15 +8,15 @@
       "user": "0xfefefefefefefefefefefefefefefefefefefefe"
     },
     "http_status": 200,
-    "elapsed_ms": 180
+    "elapsed_ms": 189
   },
   "payload": {
     "balances": [
       {
         "coin": "USDC",
         "token": 0,
-        "total": "8448.89809123",
-        "hold": "0.0",
+        "total": "22376.58756923",
+        "hold": "9999.7788",
         "entryNtl": "0.0"
       },
       {
@@ -78,9 +78,9 @@
       {
         "coin": "BRIDGE",
         "token": 73,
-        "total": "2306567.2487522",
+        "total": "2338736.5364163001",
         "hold": "0.0",
-        "entryNtl": "175718.31393655"
+        "entryNtl": "178368.77508433"
       },
       {
         "coin": "NEIRO",
@@ -134,9 +134,9 @@
       {
         "coin": "KNTQ",
         "token": 124,
-        "total": "4743745.1598425601",
+        "total": "4765487.1298033604",
         "hold": "0.0",
-        "entryNtl": "1102667.4221073301"
+        "entryNtl": "1107598.7960969999"
       },
       {
         "coin": "PIP",
@@ -155,9 +155,9 @@
       {
         "coin": "HYPE",
         "token": 150,
-        "total": "49064768.4547392279",
+        "total": "49092164.7747392282",
         "hold": "0.0",
-        "entryNtl": "1448664996.5858135223"
+        "entryNtl": "1450503557.1213834286"
       },
       {
         "coin": "STAR",
@@ -197,14 +197,14 @@
       {
         "coin": "USDE",
         "token": 235,
-        "total": "6485.19694323",
+        "total": "6487.34368616",
         "hold": "0.0",
         "entryNtl": "4172.24015226"
       },
       {
         "coin": "USDT0",
         "token": 268,
-        "total": "7312.78060237",
+        "total": "7373.02412107",
         "hold": "0.0",
         "entryNtl": "18.60716354"
       },
