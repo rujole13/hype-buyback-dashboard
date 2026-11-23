@@ -1,11 +1,11 @@
 {
   "_probe": {
-    "captured_at": "2026-11-22T13:54:37.667201+00:00",
+    "captured_at": "2026-11-23T17:06:09.784620+00:00",
     "url": "https://api.llama.fi/summary/fees/hyperliquid?dataType=dailyRevenue",
     "method": "GET",
     "request_body": null,
     "http_status": 200,
-    "elapsed_ms": 41
+    "elapsed_ms": 50
   },
   "payload": {
     "id": "parent#hyperliquid",
@@ -196,13 +196,13 @@
     "unknownBreakdownMethodology": null,
     "slug": "hyperliquid",
     "protocolType": "protocol",
-    "total24h": 3222394,
-    "total48hto24h": 4318874,
-    "total7d": 21223257,
-    "total30d": 75894765,
-    "total1y": 678780604,
-    "annualized1y": 678780604,
-    "totalAllTime": 1440252405,
+    "total24h": 2130908,
+    "total48hto24h": 3222394,
+    "total7d": 20309923,
+    "total30d": 76068765,
+    "total1y": 679451363,
+    "annualized1y": 679451363,
+    "totalAllTime": 1442383313,
     "totalDataChart": [
       [
         1734912000,
@@ -604,11 +604,7 @@
         1743638400,
         1342024
       ],
-      "__truncated__ 495 items omitted",
-      [
-        1786665600,
-        838034
-      ],
+      "__truncated__ 496 items omitted",
       [
         1786752000,
         278054
@@ -1004,6 +1000,10 @@
       [
         1795219200,
         3222394
+      ],
+      [
+        1795305600,
+        2130908
       ]
     ],
     "totalDataChartBreakdown": [
@@ -1997,18 +1997,7 @@
           }
         }
       ],
-      "__truncated__ 495 items omitted",
-      [
-        1786665600,
-        {
-          "Hyperliquid L1": {
-            "Hyperliquid HLP": 0,
-            "Hyperliquid Perps": 813844,
-            "Hyperliquid Spot Orderbook": 24190,
-            "Hyperliquid Outcomes": 0
-          }
-        }
-      ],
+      "__truncated__ 496 items omitted",
       [
         1786752000,
         {
@@ -3097,29 +3086,40 @@
             "Hyperliquid Outcomes": 6856
           }
         }
+      ],
+      [
+        1795305600,
+        {
+          "Hyperliquid L1": {
+            "Hyperliquid HLP": 0,
+            "Hyperliquid Perps": 2058280,
+            "Hyperliquid Spot Orderbook": 65515,
+            "Hyperliquid Outcomes": 7113
+          }
+        }
       ]
     ],
-    "change_1d": -25.39,
+    "change_1d": -33.87,
     "chainBreakdown": {
       "Hyperliquid L1": {
-        "total24h": 3222394,
-        "total48hto24h": 4318874,
-        "totalLastFullDay": 3222394,
-        "total7d": 21223257,
-        "total14dto7d": 18374268,
-        "total30d": 75894765,
-        "total60dto30d": 66477475,
-        "total1y": 678780604,
-        "total7DaysAgo": 3909927,
-        "total30DaysAgo": 2781539,
-        "totalAllTime": 1440252405,
-        "average1y": 1859672.887671233,
-        "monthlyAverage1y": 56608442.70071233,
-        "change_1d": -25.39,
-        "change_7d": -17.58,
-        "change_1m": 15.85,
-        "change_7dover7d": 15.51,
-        "change_30dover30d": 14.17
+        "total24h": 2130908,
+        "total48hto24h": 3222394,
+        "totalLastFullDay": 2130908,
+        "total7d": 20309923,
+        "total14dto7d": 19527057,
+        "total30d": 76068765,
+        "total60dto30d": 65781714,
+        "total1y": 679451363,
+        "total7DaysAgo": 3044242,
+        "total30DaysAgo": 1956908,
+        "totalAllTime": 1442383313,
+        "average1y": 1861510.5835616437,
+        "monthlyAverage1y": 56664382.163616434,
+        "change_1d": -33.87,
+        "change_7d": -30,
+        "change_1m": 8.89,
+        "change_7dover7d": 4.01,
+        "change_30dover30d": 15.64
       }
     }
   }
