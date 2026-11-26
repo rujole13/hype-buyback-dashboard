@@ -1,17 +1,17 @@
 {
   "_probe": {
-    "captured_at": "2026-11-25T16:39:24.446458+00:00",
+    "captured_at": "2026-11-26T16:12:04.499019+00:00",
     "url": "https://api.hyperliquid.xyz/info",
     "method": "POST",
     "request_body": {
       "type": "userFillsByTime",
       "user": "0xfefefefefefefefefefefefefefefefefefefefe",
-      "startTime": 1793032761823,
-      "endTime": 1795624761823,
+      "startTime": 1793117521977,
+      "endTime": 1795709521977,
       "aggregateByTime": true
     },
     "http_status": 200,
-    "elapsed_ms": 664
+    "elapsed_ms": 656
   },
   "payload": [
     {
